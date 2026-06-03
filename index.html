@@ -31,7 +31,7 @@
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: clip; }
     body {
       margin: 0;
       color: var(--ink);
@@ -41,6 +41,7 @@
         var(--paper);
       background-size: 48px 48px;
       line-height: 1.78;
+      overflow-x: clip;
       font-feature-settings: "palt" 1;
       text-rendering: optimizeLegibility;
     }
@@ -51,7 +52,7 @@
     :focus-visible { outline: 3px solid rgba(183,111,61,.42); outline-offset: 3px; border-radius: 10px; }
 
     .container { width: min(var(--container), calc(100% - 44px)); margin-inline: auto; }
-    .hero-grid > *, .problem-grid > *, .plans-wrap > *, .process-layout > *, .final-box > *, .use-grid > *, .value-grid > *, .plan-grid > *, .faq-grid > * { min-width: 0; }
+    .hero-grid > *, .problem-grid > *, .plans-wrap > *, .process-layout > *, .final-box > *, .use-grid > *, .value-grid > *, .plan-grid > *, .faq-grid > *, .proof-grid > * { min-width: 0; }
     .section { padding: 96px 0; }
     .section.compact { padding: 74px 0; }
     .section.alt { background: rgba(244, 234, 220, .74); border-block: 1px solid var(--line); }
@@ -127,6 +128,14 @@
     .trust-item strong { display: block; font-size: 22px; letter-spacing: -.045em; }
     .trust-item span { color: rgba(255,255,255,.62); font-size: 12px; }
 
+    .proof-band { position: relative; margin-top: -1px; padding: 20px 0; background: #fff8ef; border-bottom: 1px solid var(--line); }
+    .proof-grid { display: grid; grid-template-columns: 1.15fr repeat(3, 1fr); gap: 0; border: 1px solid var(--line); border-radius: 24px; overflow: hidden; background: #fff; box-shadow: var(--shadow-sm); }
+    .proof-item { padding: 20px 22px; border-left: 1px solid var(--line); }
+    .proof-item:first-child { border-left: 0; background: #19130f; color: #fff; }
+    .proof-item small { display: block; color: var(--muted); font-size: 11px; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+    .proof-item:first-child small { color: rgba(255,255,255,.58); }
+    .proof-item strong { display: block; margin-top: 4px; font-size: 17px; line-height: 1.35; letter-spacing: -.025em; }
+
     .hero-board { position: relative; }
     .mock-card {
       position: relative; overflow: hidden; min-height: 560px; border-radius: 34px; background: #241811;
@@ -162,9 +171,10 @@
     .problem-list li { display: grid; grid-template-columns: 28px 1fr; gap: 12px; align-items: start; color: #5f5148; }
     .problem-list li::before { content: ""; width: 28px; height: 28px; border-radius: 50%; background: rgba(183,111,61,.12); border: 1px solid rgba(183,111,61,.22); }
     .dark-panel .problem-list li { color: rgba(255,255,255,.72); }
-    .value-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 18px; }
+    .value-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 18px; }
     .value-card { padding: 22px; border: 1px solid rgba(255,255,255,.12); border-radius: 22px; background: rgba(255,255,255,.06); }
     .value-card strong { display: block; color: #f1d798; margin-bottom: 5px; }
+    .value-card span { color: rgba(255,255,255,.70); font-size: 14px; }
 
     .use-grid, .plan-grid, .faq-grid { display: grid; gap: 18px; }
     .use-grid { grid-template-columns: repeat(3, 1fr); }
@@ -251,7 +261,10 @@
       .mock-card, .mock-card img { min-height: auto; height: auto; }
       .floating-note { right: 18px; }
       .estimate-card { position: static; }
-      .use-grid, .value-grid { grid-template-columns: 1fr; }
+      .use-grid, .value-grid { grid-template-columns: 1fr 1fr; }
+      .proof-grid { grid-template-columns: 1fr 1fr; }
+      .proof-item:nth-child(3) { border-left: 0; border-top: 1px solid var(--line); }
+      .proof-item:nth-child(4) { border-top: 1px solid var(--line); }
     }
     @media (max-width: 700px) {
       html, body { overflow-x: hidden; }
@@ -269,7 +282,9 @@
       .eyebrow { max-width: 100%; white-space: normal; line-height: 1.45; }
       .hero-actions { display: grid; grid-template-columns: 1fr; width: 100%; }
       .hero-actions .btn { width: 100%; padding-inline: 12px; }
-      .trust-strip, .form-grid { grid-template-columns: 1fr; }
+      .trust-strip, .form-grid, .proof-grid, .use-grid, .value-grid { grid-template-columns: 1fr; }
+      .proof-item { border-left: 0; border-top: 1px solid var(--line); }
+      .proof-item:first-child { border-top: 0; }
       .floating-note { position: static; margin-top: 12px; max-width: none; }
       .mock-card { border-radius: 24px; }
       .mock-caption { position: relative; left: auto; right: auto; bottom: auto; margin: -72px 14px 14px; grid-template-columns: 1fr; }
@@ -323,7 +338,7 @@
           <div class="trust-strip" aria-label="信頼指標">
             <div class="trust-item"><strong>3,000粒〜</strong><span>初回導入しやすい最小ロット</span></div>
             <div class="trust-item"><strong>¥20/粒〜</strong><span>営業資料に載せやすい価格目安</span></div>
-            <div class="trust-item"><strong>個包装対応</strong><span>受付・会計・同梱で配布しやすい仕様</span></div>
+            <div class="trust-item"><strong>14営業日〜</strong><span>イベント日から逆算しやすい納期目安</span></div>
           </div>
         </div>
         <div class="hero-board">
@@ -339,6 +354,15 @@
             <strong>デザイン確定後<br>14営業日〜</strong>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="proof-band" aria-label="法人提案で伝えたい要点">
+      <div class="container proof-grid">
+        <div class="proof-item"><small>Positioning</small><strong>営業資料に馴染む、上質な食品ノベルティ。</strong></div>
+        <div class="proof-item"><small>Scene</small><strong>会計時・受付・資料同梱で自然に手渡せる。</strong></div>
+        <div class="proof-item"><small>Design</small><strong>ロゴ、ブランドカラー、限定企画名を個包装へ。</strong></div>
+        <div class="proof-item"><small>Operation</small><strong>概算価格と納期を先に示し、提案しやすく。</strong></div>
       </div>
     </section>
 
@@ -374,6 +398,7 @@
           <div class="value-card"><strong>記憶に残る</strong><span>ロゴやブランドカラーを目にするだけでなく、食べる体験として印象に残ります。</span></div>
           <div class="value-card"><strong>配りやすい</strong><span>個包装で衛生的に扱いやすく、受付・会計・資料同梱など幅広い現場に対応。</span></div>
           <div class="value-card"><strong>提案しやすい</strong><span>3,000粒〜、20円/粒〜の目安を明示。営業前の概算説明がしやすくなります。</span></div>
+          <div class="value-card"><strong>広げやすい</strong><span>周年・季節企画・地域イベントなど、同じ型から別企画へ展開できます。</span></div>
         </div>
       </div>
     </section>
@@ -569,8 +594,8 @@
       <div class="container final-box">
         <div>
           <span class="eyebrow">Contact</span>
-          <h2 id="final-title">営業先にそのまま提案できる、記憶に残るノベルティを。</h2>
-          <p>用途・数量・納期が未定でも、まずは概算価格から整理できます。飲食店、展示会、周年記念、地域イベントに合わせた仕様を相談してください。</p>
+          <h2 id="final-title">まずは「このロゴ、飴にできますか？」から。</h2>
+          <p>用途・数量・納期が未定でも、ロゴやブランドカラーの方向性から相談できます。飲食店、展示会、周年記念、地域イベントに合わせた仕様を一緒に整理します。</p>
         </div>
         <div class="hero-actions">
           <a class="btn btn-copper" href="#estimate">概算見積もりを見る</a>
