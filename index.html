@@ -3,21 +3,20 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AMEIRO | オーダーメイド飴のECサイト</title>
-  <meta name="description" content="企業ノベルティ・結婚式・推し活向けのオーダーメイド飴ECサイト。ロゴ・写真・色・味を選んで小ロットから制作できます。" />
+  <title>AMEIRO | 飲食店・イベント向けオーダーメイド飴ノベルティ</title>
+  <meta name="description" content="飲食店・イベント主催者向けのオーダーメイド飴ノベルティ。来店特典・周年記念・イベント配布に使える個包装キャンディを小ロットから制作。" />
   <style>
     :root {
-      --bg: #fff8f2;
-      --paper: #fffefa;
+      --bg: #fbf7f1;
+      --paper: #fffdf8;
       --ink: #24170f;
-      --muted: #7d685b;
+      --muted: #77675d;
       --line: rgba(78, 44, 28, .14);
-      --red: #ff5c77;
-      --orange: #ff9f43;
-      --yellow: #ffd166;
-      --mint: #5dd8b1;
-      --purple: #8f72ff;
-      --shadow: 0 24px 70px rgba(87, 48, 25, .16);
+      --brand: #a85f2a;
+      --brand2: #d99245;
+      --accent: #245f4f;
+      --gold: #d6a84f;
+      --shadow: 0 24px 70px rgba(87, 48, 25, .15);
       --radius: 28px;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Noto Sans JP", sans-serif;
     }
@@ -27,82 +26,81 @@
       margin: 0;
       color: var(--ink);
       background:
-        radial-gradient(circle at 10% 8%, rgba(255, 209, 102, .42), transparent 28%),
-        radial-gradient(circle at 90% 4%, rgba(255, 92, 119, .25), transparent 28%),
-        linear-gradient(180deg, #fff8f2 0%, #fffefd 48%, #fff3e6 100%);
-      line-height: 1.7;
+        radial-gradient(circle at 10% 8%, rgba(214, 168, 79, .22), transparent 30%),
+        radial-gradient(circle at 90% 0%, rgba(36, 95, 79, .12), transparent 32%),
+        linear-gradient(180deg, #fbf7f1 0%, #fffdf8 50%, #f7ecdd 100%);
+      line-height: 1.75;
     }
     a { color: inherit; text-decoration: none; }
     button, input, select, textarea { font: inherit; }
     .container { width: min(1140px, calc(100% - 40px)); margin: 0 auto; }
-    .nav {
-      position: sticky; top: 0; z-index: 10;
-      backdrop-filter: blur(18px);
-      background: rgba(255, 248, 242, .78);
-      border-bottom: 1px solid var(--line);
-    }
+    .nav { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(18px); background: rgba(251, 247, 241, .82); border-bottom: 1px solid var(--line); }
     .nav-inner { height: 74px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
     .brand { display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:.04em; }
-    .brand-mark { width: 38px; height: 38px; border-radius: 14px; background: conic-gradient(from 20deg, var(--red), var(--yellow), var(--mint), var(--purple), var(--red)); box-shadow: inset 0 0 0 6px #fff; transform: rotate(-8deg); }
-    .nav-links { display:flex; align-items:center; gap: 22px; color: var(--muted); font-weight: 700; font-size: 14px; }
+    .brand-mark { width: 38px; height: 38px; border-radius: 14px; background: conic-gradient(from 20deg, var(--brand), var(--gold), var(--accent), var(--brand)); box-shadow: inset 0 0 0 6px #fff; transform: rotate(-8deg); }
+    .nav-links { display:flex; align-items:center; gap: 22px; color: var(--muted); font-weight: 800; font-size: 14px; }
     .nav-actions { display:flex; gap: 10px; align-items:center; }
-    .btn { border:0; cursor:pointer; border-radius:999px; padding: 13px 20px; font-weight: 850; display:inline-flex; align-items:center; justify-content:center; gap:8px; transition:.2s ease; white-space: nowrap; }
-    .btn-primary { color:#fff; background: linear-gradient(135deg, var(--red), var(--orange)); box-shadow: 0 14px 30px rgba(255, 92, 119, .25); }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 18px 42px rgba(255, 92, 119, .34); }
-    .btn-ghost { background: rgba(255,255,255,.68); border:1px solid var(--line); color: var(--ink); }
+    .btn { border:0; cursor:pointer; border-radius:999px; padding: 13px 20px; font-weight: 900; display:inline-flex; align-items:center; justify-content:center; gap:8px; transition:.2s ease; white-space: nowrap; }
+    .btn-primary { color:#fff; background: linear-gradient(135deg, var(--brand), var(--brand2)); box-shadow: 0 14px 30px rgba(168, 95, 42, .24); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 18px 42px rgba(168, 95, 42, .32); }
+    .btn-ghost { background: rgba(255,255,255,.72); border:1px solid var(--line); color: var(--ink); }
     .btn-ghost:hover { transform: translateY(-2px); background:#fff; }
-    .hero { padding: 74px 0 44px; }
-    .hero-grid { display:grid; grid-template-columns: 1.05fr .95fr; gap: 44px; align-items:center; }
-    .eyebrow { display:inline-flex; gap:8px; align-items:center; padding: 8px 12px; border:1px solid var(--line); background: rgba(255,255,255,.7); border-radius:999px; color: #7b4a2b; font-size: 13px; font-weight: 800; }
-    h1 { font-size: clamp(42px, 7vw, 78px); line-height: 1.02; letter-spacing: -0.07em; margin: 20px 0 22px; }
-    .gradient-text { background: linear-gradient(135deg, #fb4267 0%, #ff9f43 50%, #16b981 100%); -webkit-background-clip:text; color: transparent; }
-    .lead { font-size: 18px; color: var(--muted); max-width: 640px; margin: 0 0 28px; }
+    .btn-line { color:#24170f; background:#fff; border:1px solid rgba(255,255,255,.4); }
+    .hero { padding: 78px 0 44px; }
+    .hero-grid { display:grid; grid-template-columns: 1.04fr .96fr; gap: 44px; align-items:center; }
+    .eyebrow { display:inline-flex; gap:8px; align-items:center; padding: 8px 12px; border:1px solid var(--line); background: rgba(255,255,255,.74); border-radius:999px; color: #7b4a2b; font-size: 13px; font-weight: 900; }
+    h1 { font-size: clamp(42px, 7vw, 76px); line-height: 1.04; letter-spacing: -0.07em; margin: 20px 0 22px; }
+    .gradient-text { background: linear-gradient(135deg, #8a4a22 0%, #d99245 52%, #245f4f 100%); -webkit-background-clip:text; color: transparent; }
+    .lead { font-size: 18px; color: var(--muted); max-width: 650px; margin: 0 0 28px; }
     .hero-actions { display:flex; gap: 12px; flex-wrap: wrap; align-items:center; }
-    .trust { display:flex; gap: 18px; flex-wrap: wrap; margin-top: 28px; color: var(--muted); font-size: 13px; font-weight: 750; }
-    .trust span { display:flex; align-items:center; gap: 7px; }
-    .hero-card { position:relative; min-height: 560px; border-radius: 44px; background: linear-gradient(145deg, rgba(255,255,255,.88), rgba(255,239,220,.75)); border:1px solid rgba(255,255,255,.8); box-shadow: var(--shadow); overflow: hidden; padding: 30px; }
-    .candy-preview { position:absolute; inset: 34px 30px auto; height: 360px; border-radius: 42px; background: radial-gradient(circle at 35% 30%, #fff 0 8%, transparent 9%), conic-gradient(from var(--spin, 0deg), #ff5c77, #ffd166, #5dd8b1, #8f72ff, #ff5c77); display:flex; align-items:center; justify-content:center; transition: .4s ease; box-shadow: inset 0 -22px 60px rgba(80,40,10,.14); }
-    .candy-preview::before { content:""; position:absolute; inset: 46px; border-radius: 50%; background: rgba(255,255,255,.94); box-shadow: 0 10px 50px rgba(0,0,0,.12); }
-    .candy-label { position:relative; text-align:center; font-weight:950; letter-spacing:-.04em; font-size: 52px; line-height: .9; }
-    .candy-label small { display:block; margin-top: 12px; font-size: 13px; letter-spacing:.18em; color: var(--muted); }
-    .config-panel { position:absolute; left: 30px; right:30px; bottom:30px; background: rgba(255,255,255,.86); backdrop-filter: blur(16px); border:1px solid var(--line); border-radius: 30px; padding: 20px; }
+    .trust { display:flex; gap: 18px; flex-wrap: wrap; margin-top: 28px; color: var(--muted); font-size: 13px; font-weight: 800; }
+    .hero-card { position:relative; min-height: 560px; border-radius: 44px; background: linear-gradient(145deg, rgba(255,255,255,.9), rgba(246,233,213,.78)); border:1px solid rgba(255,255,255,.86); box-shadow: var(--shadow); overflow: hidden; padding: 30px; }
+    .photo-mock { height: 315px; border-radius: 34px; background: linear-gradient(135deg, #f3e3cc, #fff9ee); border: 1px solid rgba(255,255,255,.84); box-shadow: 0 20px 54px rgba(87,48,25,.16); position: relative; overflow:hidden; }
+    .photo-mock:before { content:""; position:absolute; inset:0; background: radial-gradient(circle at 22% 22%, rgba(255,255,255,.86), transparent 20%), linear-gradient(120deg, rgba(36,95,79,.08), transparent 38%); }
+    .tray { position:absolute; left: 42px; right: 42px; bottom: 42px; height: 118px; border-radius: 28px; background: linear-gradient(135deg, #caa06b, #8f5d31); box-shadow: 0 24px 48px rgba(74,43,22,.22); transform: rotate(-2deg); }
+    .candy-row { position:absolute; left: 70px; right: 70px; bottom: 86px; display:flex; justify-content:space-between; }
+    .wrap-candy { width: 74px; height: 46px; border-radius: 999px; background: rgba(255,255,255,.86); border: 1px solid rgba(130,78,42,.14); box-shadow: 0 10px 24px rgba(74,43,22,.16); display:grid; place-items:center; font-size:11px; font-weight:950; color:#8a4a22; }
+    .photo-badge { position:absolute; left:18px; top:18px; padding:8px 12px; border-radius:999px; background:rgba(255,255,255,.9); color:#7b4a2b; font-size:12px; font-weight:900; backdrop-filter: blur(10px); }
+    .config-panel { position:absolute; left: 30px; right:30px; bottom:30px; background: rgba(255,255,255,.88); backdrop-filter: blur(16px); border:1px solid var(--line); border-radius: 30px; padding: 20px; }
     .config-row { display:grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    label { font-size:12px; color:var(--muted); font-weight:850; display:block; margin-bottom:6px; }
+    label { font-size:12px; color:var(--muted); font-weight:900; display:block; margin-bottom:6px; }
     input, select, textarea { width:100%; border:1px solid var(--line); border-radius:16px; background:#fff; padding: 12px 14px; color:var(--ink); outline: none; }
-    input:focus, select:focus, textarea:focus { border-color: rgba(255,92,119,.55); box-shadow: 0 0 0 4px rgba(255,92,119,.12); }
-    .swatches { display:flex; gap:8px; margin-top: 12px; }
-    .swatch { width:32px; height:32px; border-radius:999px; border:3px solid #fff; box-shadow: 0 0 0 1px var(--line); cursor:pointer; transition:.2s; }
-    .swatch.active { transform: translateY(-3px) scale(1.08); box-shadow:0 0 0 3px rgba(255,92,119,.24); }
+    input:focus, select:focus, textarea:focus { border-color: rgba(168,95,42,.55); box-shadow: 0 0 0 4px rgba(168,95,42,.12); }
     .section { padding: 74px 0; }
     .section-head { display:flex; align-items:end; justify-content:space-between; gap: 24px; margin-bottom: 28px; }
     .section h2 { font-size: clamp(30px, 4vw, 48px); line-height:1.08; letter-spacing:-.05em; margin:0; }
-    .section p.sub { color:var(--muted); margin:8px 0 0; max-width:580px; }
-    .cards { display:grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .card { background: rgba(255,255,255,.78); border:1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: 0 16px 48px rgba(87,48,25,.08); }
+    .section p.sub { color:var(--muted); margin:8px 0 0; max-width:620px; }
+    .cards, .products { display:grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card { background: rgba(255,255,255,.8); border:1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: 0 16px 48px rgba(87,48,25,.08); }
+    .product { overflow:hidden; padding:0; }
+    .product-art { height: 220px; display:grid; place-items:center; background: linear-gradient(135deg, rgba(168,95,42,.12), rgba(214,168,79,.18)); position:relative; overflow:hidden; }
+    .product-art .mini-scene { width: 82%; height: 72%; border-radius: 28px; background: rgba(255,255,255,.75); border: 1px solid rgba(255,255,255,.9); box-shadow: 0 22px 42px rgba(87,48,25,.14); display:flex; align-items:center; justify-content:center; gap: 12px; }
+    .mini-candy { width: 54px; height: 36px; border-radius:999px; background:#fff; border:1px solid rgba(120,75,40,.12); display:grid; place-items:center; font-size:10px; font-weight:950; color:#8a4a22; box-shadow:0 8px 18px rgba(80,44,20,.12); }
+    .product-body { padding: 22px; }
+    .product-body h3 { margin: 10px 0 8px; font-size: 20px; }
+    .product-body p { color: var(--muted); margin: 0; }
+    .price { display:flex; justify-content:space-between; align-items:center; margin-top: 16px; font-weight:900; }
+    .tag { color:#865022; background:#fff1dc; border-radius:999px; padding:5px 9px; font-size:12px; font-weight:900; }
+    .product-note { font-size:12px; color:var(--muted); margin-top:10px; }
     .card-icon { width:46px; height:46px; border-radius:17px; display:grid; place-items:center; font-size:24px; background: #fff3e6; margin-bottom: 16px; }
     .card h3 { margin: 0 0 8px; font-size: 20px; letter-spacing:-.02em; }
     .card p { margin:0; color:var(--muted); }
-    .products { display:grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .product { overflow:hidden; padding:0; }
-    .product-art { height: 190px; display:grid; place-items:center; background: linear-gradient(135deg, rgba(255,92,119,.22), rgba(255,209,102,.22)); }
-    .jar { width:116px; height:136px; border-radius: 28px 28px 38px 38px; background: rgba(255,255,255,.82); border: 6px solid rgba(255,255,255,.88); box-shadow: inset 0 -26px 30px rgba(255, 92,119,.25), 0 18px 30px rgba(0,0,0,.08); position:relative; }
-    .jar::before { content:""; position:absolute; left:25px; right:25px; top:-20px; height:24px; border-radius:10px 10px 4px 4px; background: #c9884a; }
-    .product-body { padding: 22px; }
-    .price { display:flex; justify-content:space-between; align-items:center; margin-top: 16px; font-weight:900; }
-    .tag { color:#ad5b24; background:#fff1dc; border-radius:999px; padding:5px 9px; font-size:12px; font-weight:850; }
     .builder { display:grid; grid-template-columns: .9fr 1.1fr; gap: 22px; align-items:start; }
     .summary-box { position:sticky; top: 96px; background: #21150f; color:#fff; border-radius: 32px; padding: 28px; box-shadow: var(--shadow); }
     .summary-box h3 { margin:0 0 14px; font-size:26px; letter-spacing:-.03em; }
     .summary-line { display:flex; justify-content:space-between; gap:16px; padding: 12px 0; border-bottom:1px solid rgba(255,255,255,.12); color: rgba(255,255,255,.78); }
     .summary-line strong { color:#fff; }
+    .estimate-total { font-size:34px; letter-spacing:-.04em; }
+    .contact-actions { display:grid; gap:10px; margin-top:14px; }
+    .contact-actions .btn { width:100%; }
     .form-grid { display:grid; grid-template-columns: 1fr 1fr; gap:14px; }
     .full { grid-column: 1 / -1; }
-    .notice { margin-top: 14px; padding: 14px; border-radius: 18px; background: rgba(255,209,102,.22); color:#6d4422; font-size: 13px; font-weight:750; }
+    .notice { margin-top: 14px; padding: 14px; border-radius: 18px; background: rgba(214,168,79,.20); color:#6d4422; font-size: 13px; font-weight:800; }
     .cases { display:grid; grid-template-columns: 1fr 1fr; gap: 18px; }
     .case { display:flex; gap:18px; align-items:flex-start; }
-    .case .avatar { flex:0 0 auto; width:58px; height:58px; border-radius:22px; background: linear-gradient(135deg, var(--red), var(--yellow)); display:grid; place-items:center; color:#fff; font-weight:950; }
+    .case .avatar { flex:0 0 auto; width:58px; height:58px; border-radius:22px; background: linear-gradient(135deg, var(--brand), var(--gold)); display:grid; place-items:center; color:#fff; font-weight:950; }
     .faq { display:grid; gap: 10px; }
-    details { background: rgba(255,255,255,.78); border:1px solid var(--line); border-radius: 22px; padding: 18px 20px; }
+    details { background: rgba(255,255,255,.8); border:1px solid var(--line); border-radius: 22px; padding: 18px 20px; }
     summary { cursor:pointer; font-weight:900; }
     details p { color:var(--muted); margin: 12px 0 0; }
     .footer { padding: 44px 0; color:var(--muted); border-top:1px solid var(--line); }
@@ -111,7 +109,6 @@
     @media (max-width: 880px) {
       .nav-links { display:none; }
       .hero-grid, .builder { grid-template-columns:1fr; }
-      .hero-card { min-height: 560px; }
       .cards, .products, .cases { grid-template-columns:1fr; }
       .section-head { display:block; }
     }
@@ -121,9 +118,10 @@
       .hero { padding-top:44px; }
       .config-row, .form-grid { grid-template-columns:1fr; }
       .hero-card { padding:18px; border-radius:30px; }
-      .candy-preview { left:18px; right:18px; top:18px; height:320px; }
       .config-panel { left:18px; right:18px; bottom:18px; }
-      .candy-label { font-size:42px; }
+      .photo-mock { height:290px; }
+      .candy-row { left:34px; right:34px; }
+      .wrap-candy { width:58px; }
     }
   </style>
 </head>
@@ -132,9 +130,9 @@
     <div class="container nav-inner">
       <a class="brand" href="#top" aria-label="AMEIRO トップへ"><span class="brand-mark"></span><span>AMEIRO</span></a>
       <div class="nav-links">
-        <a href="#products">商品</a>
+        <a href="#products">用途</a>
         <a href="#builder">見積もり</a>
-        <a href="#cases">活用例</a>
+        <a href="#cases">提案例</a>
         <a href="#faq">FAQ</a>
       </div>
       <div class="nav-actions">
@@ -148,30 +146,32 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <span class="eyebrow">🍬 小ロット300袋〜 / 法人・イベント対応</span>
-          <h1>ロゴも、色も、味も。<br><span class="gradient-text">世界にひとつの飴</span>をECで。</h1>
-          <p class="lead">AMEIROは、企業ノベルティ・結婚式・推し活・地域イベント向けのオーダーメイド飴ショップです。デザイン確認、見積もり、発注までオンラインで完結します。</p>
+          <span class="eyebrow">🍬 飲食店・イベント主催者向け / 小ロット300袋〜</span>
+          <h1>お店とイベントの印象を、<br><span class="gradient-text">持ち帰られる飴</span>に。</h1>
+          <p class="lead">飲食店の来店特典、周年記念、イベント受付で配れるオーダーメイド飴。ロゴ・色・味を反映した個包装ノベルティで、安っぽく見せず、会話のきっかけを作ります。</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#builder">今すぐデザインして見積もる</a>
-            <a class="btn btn-ghost" href="#products">商品ラインナップ</a>
+            <a class="btn btn-primary" href="#builder">30秒で概算見積もり</a>
+            <a class="btn btn-ghost" href="#products">用途別プランを見る</a>
           </div>
           <div class="trust">
             <span>✓ 最短14営業日</span><span>✓ 個包装対応</span><span>✓ 請求書払いOK</span><span>✓ データ入稿サポート</span>
           </div>
         </div>
 
-        <aside class="hero-card" aria-label="飴デザインプレビュー">
-          <div class="candy-preview" id="candyPreview">
-            <div class="candy-label"><span id="previewText">AMEIRO</span><small id="previewSub">LEMON SODA</small></div>
+        <aside class="hero-card" aria-label="飲食店・イベント向け商品イメージ">
+          <div class="photo-mock">
+            <span class="photo-badge">飲食店・イベント向け</span>
+            <div class="tray"></div>
+            <div class="candy-row"><div class="wrap-candy">LOGO</div><div class="wrap-candy">EVENT</div><div class="wrap-candy">SHOP</div><div class="wrap-candy">GIFT</div></div>
           </div>
           <div class="config-panel">
             <div class="config-row">
               <div>
-                <label for="logoText">ロゴ/文字</label>
-                <input id="logoText" value="AMEIRO" maxlength="10" />
+                <label for="logoText">入れたいロゴ/文字</label>
+                <input id="logoText" value="SHOP NAME" maxlength="16" />
               </div>
               <div>
-                <label for="flavorSelect">味</label>
+                <label for="flavorSelect">味のイメージ</label>
                 <select id="flavorSelect">
                   <option>レモンソーダ</option>
                   <option>いちごミルク</option>
@@ -180,12 +180,7 @@
                 </select>
               </div>
             </div>
-            <div class="swatches" aria-label="色を選択">
-              <button class="swatch active" style="background:#ff5c77" data-color="#ff5c77" aria-label="ピンク"></button>
-              <button class="swatch" style="background:#ffd166" data-color="#ffd166" aria-label="イエロー"></button>
-              <button class="swatch" style="background:#5dd8b1" data-color="#5dd8b1" aria-label="ミント"></button>
-              <button class="swatch" style="background:#8f72ff" data-color="#8f72ff" aria-label="パープル"></button>
-            </div>
+            <div class="notice">上のビジュアルはLP用の簡易イメージです。実制作ではロゴデータ確認後に仕上がりイメージを共有します。</div>
           </div>
         </aside>
       </div>
@@ -195,37 +190,38 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <h2>用途別に選べる3つの商品</h2>
-            <p class="sub">最初はSKUを絞るのが正解。迷わせず、法人・イベント・ギフトの主要ニーズに寄せています。</p>
+            <h2>飲食店・イベント向けの3つの使い方</h2>
+            <p class="sub">営業で刺さりやすい用途に絞りました。飲食店の来店特典、イベント配布、周年記念の3軸で提案できます。</p>
           </div>
           <a class="btn btn-ghost" href="#builder">まとめて見積もり</a>
         </div>
         <div class="products">
           <article class="card product">
-            <div class="product-art"><div class="jar"></div></div>
+            <div class="product-art"><div class="mini-scene"><div class="mini-candy">SHOP</div><div class="mini-candy">LOGO</div><div class="mini-candy">CAFE</div></div></div>
             <div class="product-body">
-              <span class="tag">法人ノベルティ</span>
-              <h3>ロゴ入りキャンディ</h3>
-              <p>展示会・周年記念・来店特典に。ブランドカラーとロゴを個包装に反映。</p>
+              <span class="tag">飲食店・店舗向け</span>
+              <h3>ショップロゴ入りキャンディ</h3>
+              <p>会計時・テイクアウト・来店特典に。店名やブランドカラーを入れて、再来店のきっかけに。</p>
               <div class="price"><span>300袋〜</span><strong>¥38/袋〜</strong></div>
+              <p class="product-note">※画像はLP用の制作イメージです。</p>
             </div>
           </article>
           <article class="card product">
-            <div class="product-art" style="background:linear-gradient(135deg, rgba(93,216,177,.24), rgba(143,114,255,.22))"><div class="jar"></div></div>
+            <div class="product-art"><div class="mini-scene"><div class="mini-candy">PASS</div><div class="mini-candy">EVENT</div><div class="mini-candy">VIP</div></div></div>
             <div class="product-body">
-              <span class="tag">結婚式・記念日</span>
-              <h3>写真入りプチギフト</h3>
-              <p>お名前・日付・写真を入れて、ゲストに配れる華やかな小分けギフトに。</p>
-              <div class="price"><span>100袋〜</span><strong>¥62/袋〜</strong></div>
-            </div>
-          </article>
-          <article class="card product">
-            <div class="product-art" style="background:linear-gradient(135deg, rgba(255,159,67,.24), rgba(255,92,119,.18))"><div class="jar"></div></div>
-            <div class="product-body">
-              <span class="tag">推し活・地域イベント</span>
-              <h3>カラーMIXパック</h3>
-              <p>メンバーカラーや地域カラーを複数組み合わせ。イベント物販にも対応。</p>
+              <span class="tag">イベント受付向け</span>
+              <h3>イベント配布パック</h3>
+              <p>受付・入場特典・物販購入者特典に。軽くて配りやすく、余っても保管しやすい個包装。</p>
               <div class="price"><span>200袋〜</span><strong>¥48/袋〜</strong></div>
+            </div>
+          </article>
+          <article class="card product">
+            <div class="product-art"><div class="mini-scene"><div class="mini-candy">ANNIV</div><div class="mini-candy">GIFT</div><div class="mini-candy">THANKS</div></div></div>
+            <div class="product-body">
+              <span class="tag">周年記念・地域企画</span>
+              <h3>記念ノベルティBOX</h3>
+              <p>周年・商店街企画・地域イベントに。箱入りやカラー展開で、少し上質な記念品に。</p>
+              <div class="price"><span>100箱〜</span><strong>¥72/箱〜</strong></div>
             </div>
           </article>
         </div>
@@ -236,8 +232,8 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <h2>オーダーの不安を減らす設計</h2>
-            <p class="sub">EC化で詰まりやすい「データ入稿」「納期」「見積もり」を前面に出します。</p>
+            <h2>初めてでも頼みやすい営業設計</h2>
+            <p class="sub">飲食店・イベント主催者が不安に感じる「小ロット」「納期」「デザイン確認」を先に潰します。</p>
           </div>
         </div>
         <div class="cards">
@@ -252,26 +248,30 @@
       <div class="container builder">
         <aside class="summary-box">
           <h3>概算見積もり</h3>
-          <div class="summary-line"><span>商品</span><strong id="sumProduct">ロゴ入りキャンディ</strong></div>
+          <div class="summary-line"><span>商品</span><strong id="sumProduct">ショップロゴ入りキャンディ</strong></div>
           <div class="summary-line"><span>数量</span><strong id="sumQty">500袋</strong></div>
           <div class="summary-line"><span>単価目安</span><strong id="sumUnit">¥42</strong></div>
-          <div class="summary-line"><span>概算合計</span><strong id="sumTotal">¥21,000</strong></div>
+          <div class="summary-line"><span>概算合計</span><strong id="sumTotal" class="estimate-total">¥21,000</strong></div>
           <p style="color:rgba(255,255,255,.68); font-size:13px; margin:16px 0 0;">正式金額はデータ確認後に確定します。複雑な印刷・特殊包装は別途見積もり。</p>
+          <div class="contact-actions">
+            <a id="salesMail" class="btn btn-primary" href="mailto:sales@example.com">この内容で営業に相談する</a>
+            <a class="btn btn-line" href="#products">商品をもう一度見る</a>
+          </div>
         </aside>
         <div class="card">
           <h2>30秒で概算見積もり</h2>
-          <p class="sub">このフォームはプロトタイプです。実装時はカート投入・問い合わせ・決済/請求書払いに接続できます。</p>
+          <p class="sub">数量を入れるだけで概算金額を表示。デモ段階では、内容をメールに入れて営業へ相談できる導線にしています。</p>
           <form class="form-grid" id="estimateForm">
             <div>
               <label for="productSelect">商品タイプ</label>
               <select id="productSelect">
-                <option data-unit="42">ロゴ入りキャンディ</option>
-                <option data-unit="68">写真入りプチギフト</option>
-                <option data-unit="52">カラーMIXパック</option>
+                <option data-unit="42">ショップロゴ入りキャンディ</option>
+                <option data-unit="58">イベント配布パック</option>
+                <option data-unit="72">記念ノベルティBOX</option>
               </select>
             </div>
             <div>
-              <label for="qtyInput">数量（袋）</label>
+              <label for="qtyInput">数量（袋/箱）</label>
               <input id="qtyInput" type="number" min="100" step="50" value="500" />
             </div>
             <div>
@@ -284,11 +284,11 @@
             </div>
             <div class="full">
               <label for="memo">用途・入れたい文字</label>
-              <textarea id="memo" rows="4" placeholder="例：展示会で配布。ロゴとブランドカラーの赤を使いたい。"></textarea>
+              <textarea id="memo" rows="4" placeholder="例：カフェの周年記念で配布。ロゴとブランドカラーの茶色を使いたい。"></textarea>
             </div>
             <div class="full">
-              <button type="submit" class="btn btn-primary" style="width:100%;">見積もり内容を保存する</button>
-              <div class="notice">実運用では、ここから「カート」「Shopify/Stripe決済」「Googleフォーム/CRM連携」のどれに進めるかを選びます。</div>
+              <button type="submit" class="btn btn-primary" style="width:100%;">見積もり内容を作成して営業に相談する</button>
+              <div class="notice">デモではメール起動まで。実運用ではGoogleフォーム/CRM、Shopify/Stripe決済へ接続できます。</div>
             </div>
           </form>
         </div>
@@ -299,15 +299,15 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <h2>こんなシーンで使えます</h2>
-            <p class="sub">まずは売れる用途に絞って訴求。商品点数を増やすより、用途別LPとして強く見せる方が立ち上がりやすいです。</p>
+            <h2>営業で提案しやすいシーン</h2>
+            <p class="sub">「飴を作れます」ではなく、集客・再来店・イベント体験のノベルティとして提案します。</p>
           </div>
         </div>
         <div class="cases">
-          <article class="card case"><div class="avatar">B2B</div><div><h3>展示会ノベルティ</h3><p>名刺交換後に印象が残る、軽くて配りやすいブランド接点として活用。</p></div></article>
-          <article class="card case"><div class="avatar">祝</div><div><h3>結婚式プチギフト</h3><p>写真・日付・名前を入れて、受付やお見送り時のギフトに。</p></div></article>
-          <article class="card case"><div class="avatar">推</div><div><h3>推し活イベント</h3><p>メンバーカラー別の飴をセット化し、物販・配布企画に展開。</p></div></article>
-          <article class="card case"><div class="avatar">街</div><div><h3>地域キャンペーン</h3><p>観光協会・商店街・自治体のノベルティとして地域色を反映。</p></div></article>
+          <article class="card case"><div class="avatar">店</div><div><h3>レストラン・カフェの来店特典</h3><p>会計時やテイクアウト袋に同梱。お店の記憶を持ち帰ってもらう小さな接点に。</p></div></article>
+          <article class="card case"><div class="avatar">受</div><div><h3>イベント受付・入場特典</h3><p>受付で配りやすく、写真にも映える。スポンサー名やイベントカラーの反映も可能。</p></div></article>
+          <article class="card case"><div class="avatar">祝</div><div><h3>周年祭・キャンペーン</h3><p>周年ロゴや限定カラーで、既存客への感謝と再来店促進に使えます。</p></div></article>
+          <article class="card case"><div class="avatar">街</div><div><h3>商店街・地域イベント</h3><p>地域名・名物カラー・イベントロゴを入れ、協賛企業にも提案しやすい配布物に。</p></div></article>
         </div>
       </div>
     </section>
@@ -316,10 +316,10 @@
       <div class="container">
         <div class="section-head"><div><h2>よくある質問</h2><p class="sub">購入前の不安をFAQで潰し、問い合わせ率を上げます。</p></div></div>
         <div class="faq">
-          <details open><summary>最小ロットはいくつですか？</summary><p>商品により100〜300袋から対応します。法人ノベルティは300袋以上を推奨しています。</p></details>
+          <details open><summary>最小ロットはいくつですか？</summary><p>商品により100〜300袋から対応します。飲食店の来店特典は300袋以上を推奨しています。</p></details>
           <details><summary>ロゴデータが粗い場合も発注できますか？</summary><p>可能です。制作前にデータ確認を行い、必要に応じて簡易トレース・再入稿のご案内をします。</p></details>
           <details><summary>納期はどれくらいですか？</summary><p>デザイン確定後、通常14〜21営業日です。繁忙期・大ロットの場合は余裕を持ってご相談ください。</p></details>
-          <details><summary>食品表示やアレルギー表記はどうなりますか？</summary><p>実運用時は製造元の仕様に合わせて、原材料・賞味期限・保存方法を商品ページと同梱資料に明記します。</p></details>
+          <details><summary>飲食店で配る場合、食品表示はどうなりますか？</summary><p>実運用時は製造元の仕様に合わせて、原材料・賞味期限・保存方法を商品ページと同梱資料に明記します。</p></details>
         </div>
       </div>
     </section>
@@ -332,14 +332,10 @@
     </div>
   </footer>
 
-  <div class="toast" id="toast">見積もり内容を保存しました（デモ）</div>
+  <div class="toast" id="toast">見積もりメールを作成しました（デモ）</div>
 
   <script>
     const logoText = document.getElementById('logoText');
-    const flavorSelect = document.getElementById('flavorSelect');
-    const previewText = document.getElementById('previewText');
-    const previewSub = document.getElementById('previewSub');
-    const candyPreview = document.getElementById('candyPreview');
     const productSelect = document.getElementById('productSelect');
     const qtyInput = document.getElementById('qtyInput');
     const sumProduct = document.getElementById('sumProduct');
@@ -347,38 +343,56 @@
     const sumUnit = document.getElementById('sumUnit');
     const sumTotal = document.getElementById('sumTotal');
     const toast = document.getElementById('toast');
+    const salesMail = document.getElementById('salesMail');
+    const deadline = document.getElementById('deadline');
+    const email = document.getElementById('email');
+    const memo = document.getElementById('memo');
 
-    function updatePreview() {
-      previewText.textContent = (logoText.value || 'AMEIRO').slice(0, 10).toUpperCase();
-      previewSub.textContent = flavorSelect.value.toUpperCase();
-      candyPreview.style.setProperty('--spin', `${Math.floor(Math.random() * 90)}deg`);
-    }
     function updateEstimate() {
       const option = productSelect.selectedOptions[0];
       const qty = Math.max(Number(qtyInput.value || 0), 100);
       const unit = Number(option.dataset.unit);
+      const total = qty * unit;
       sumProduct.textContent = option.textContent;
-      sumQty.textContent = `${qty.toLocaleString('ja-JP')}袋`;
+      sumQty.textContent = `${qty.toLocaleString('ja-JP')}袋/箱`;
       sumUnit.textContent = `¥${unit.toLocaleString('ja-JP')}`;
-      sumTotal.textContent = `¥${(qty * unit).toLocaleString('ja-JP')}`;
+      sumTotal.textContent = `¥${total.toLocaleString('ja-JP')}`;
+      updateSalesMail();
     }
-    logoText.addEventListener('input', updatePreview);
-    flavorSelect.addEventListener('change', updatePreview);
+    function updateSalesMail() {
+      const option = productSelect.selectedOptions[0];
+      const qty = Math.max(Number(qtyInput.value || 0), 100);
+      const unit = Number(option.dataset.unit);
+      const total = qty * unit;
+      const subject = `【概算見積もり相談】${option.textContent} ${qty}袋/箱`;
+      const body = [
+        '以下の内容で相談したいです。',
+        '',
+        `商品：${option.textContent}`,
+        `数量：${qty.toLocaleString('ja-JP')}袋/箱`,
+        `単価目安：¥${unit.toLocaleString('ja-JP')}`,
+        `概算合計：¥${total.toLocaleString('ja-JP')}`,
+        `希望納期：${deadline.value || '未定'}`,
+        `返信先：${email.value || '未入力'}`,
+        '',
+        `用途・入れたい文字：${memo.value || '未入力'}`,
+        '',
+        '※この金額はLP上の簡易見積もりです。正式金額はデータ確認後に確定します。'
+      ].join('\n');
+      salesMail.href = `mailto:sales@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }
     productSelect.addEventListener('change', updateEstimate);
     qtyInput.addEventListener('input', updateEstimate);
-    document.querySelectorAll('.swatch').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.swatch').forEach(x => x.classList.remove('active'));
-        btn.classList.add('active');
-        candyPreview.style.background = `radial-gradient(circle at 35% 30%, #fff 0 8%, transparent 9%), conic-gradient(from 20deg, ${btn.dataset.color}, #ffd166, #5dd8b1, #8f72ff, ${btn.dataset.color})`;
-      });
-    });
+    deadline.addEventListener('input', updateSalesMail);
+    email.addEventListener('input', updateSalesMail);
+    memo.addEventListener('input', updateSalesMail);
     document.getElementById('estimateForm').addEventListener('submit', e => {
       e.preventDefault();
+      updateSalesMail();
       toast.classList.add('show');
+      window.location.href = salesMail.href;
       setTimeout(() => toast.classList.remove('show'), 2200);
     });
-    updatePreview();
     updateEstimate();
   </script>
 </body>
