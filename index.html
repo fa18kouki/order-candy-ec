@@ -3,143 +3,365 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AMEIRO | 飲食店・イベント向けオーダーメイド飴ノベルティ</title>
-  <meta name="description" content="飲食店・イベント主催者向けのオーダーメイド飴ノベルティ。来店特典・周年記念・イベント配布に使える個包装キャンディを小ロットから制作。" />
+  <title>AMEIRO | 法人向けオーダーメイド飴・個包装ノベルティ</title>
+  <meta name="description" content="飲食店・カフェ・展示会・地域イベント向け。ロゴやブランドカラーを反映した個包装キャンディを3,000粒から制作する、法人向けオーダーメイド飴LPです。" />
   <style>
     :root {
-      --bg: #fbf7f1;
+      --ink: #211812;
+      --ink-soft: #45382f;
+      --muted: #786b60;
+      --line: rgba(54, 39, 29, .13);
       --paper: #fffdf8;
-      --ink: #24170f;
-      --muted: #77675d;
-      --line: rgba(78, 44, 28, .14);
-      --brand: #a85f2a;
-      --brand2: #d99245;
-      --accent: #245f4f;
-      --gold: #d6a84f;
-      --shadow: 0 24px 70px rgba(87, 48, 25, .15);
-      --radius: 28px;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Noto Sans JP", sans-serif;
+      --ivory: #f8f2e8;
+      --sand: #eadcc9;
+      --dark: #16110d;
+      --dark-2: #241a13;
+      --copper: #b87542;
+      --copper-dark: #8c4f2c;
+      --green: #284f42;
+      --gold: #c9a15a;
+      --shadow: 0 28px 80px rgba(37, 24, 15, .16);
+      --radius: 24px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
     }
+
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
       color: var(--ink);
-      background:
-        radial-gradient(circle at 10% 8%, rgba(214, 168, 79, .22), transparent 30%),
-        radial-gradient(circle at 90% 0%, rgba(36, 95, 79, .12), transparent 32%),
-        linear-gradient(180deg, #fbf7f1 0%, #fffdf8 50%, #f7ecdd 100%);
-      line-height: 1.75;
+      background: var(--paper);
+      line-height: 1.72;
+      font-feature-settings: "palt" 1;
+      text-rendering: optimizeLegibility;
     }
+    img { max-width: 100%; display: block; }
     a { color: inherit; text-decoration: none; }
     button, input, select, textarea { font: inherit; }
-    .container { width: min(1140px, calc(100% - 40px)); margin: 0 auto; }
-    .nav { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(18px); background: rgba(251, 247, 241, .82); border-bottom: 1px solid var(--line); }
-    .nav-inner { height: 74px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .brand { display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:.04em; }
-    .brand-mark { width: 38px; height: 38px; border-radius: 14px; background: conic-gradient(from 20deg, var(--brand), var(--gold), var(--accent), var(--brand)); box-shadow: inset 0 0 0 6px #fff; transform: rotate(-8deg); }
-    .nav-links { display:flex; align-items:center; gap: 22px; color: var(--muted); font-weight: 800; font-size: 14px; }
-    .nav-actions { display:flex; gap: 10px; align-items:center; }
-    .btn { border:0; cursor:pointer; border-radius:999px; padding: 13px 20px; font-weight: 900; display:inline-flex; align-items:center; justify-content:center; gap:8px; transition:.2s ease; white-space: nowrap; }
-    .btn-primary { color:#fff; background: linear-gradient(135deg, var(--brand), var(--brand2)); box-shadow: 0 14px 30px rgba(168, 95, 42, .24); }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 18px 42px rgba(168, 95, 42, .32); }
-    .btn-ghost { background: rgba(255,255,255,.72); border:1px solid var(--line); color: var(--ink); }
-    .btn-ghost:hover { transform: translateY(-2px); background:#fff; }
-    .btn-line { color:#24170f; background:#fff; border:1px solid rgba(255,255,255,.4); }
-    .hero { padding: 78px 0 44px; }
-    .hero-grid { display:grid; grid-template-columns: 1.04fr .96fr; gap: 44px; align-items:center; }
-    .eyebrow { display:inline-flex; gap:8px; align-items:center; padding: 8px 12px; border:1px solid var(--line); background: rgba(255,255,255,.74); border-radius:999px; color: #7b4a2b; font-size: 13px; font-weight: 900; }
-    h1 { font-size: clamp(42px, 7vw, 76px); line-height: 1.04; letter-spacing: -0.07em; margin: 20px 0 22px; }
-    .gradient-text { background: linear-gradient(135deg, #8a4a22 0%, #d99245 52%, #245f4f 100%); -webkit-background-clip:text; color: transparent; }
-    .lead { font-size: 18px; color: var(--muted); max-width: 650px; margin: 0 0 28px; }
-    .hero-actions { display:flex; gap: 12px; flex-wrap: wrap; align-items:center; }
-    .trust { display:flex; gap: 18px; flex-wrap: wrap; margin-top: 28px; color: var(--muted); font-size: 13px; font-weight: 800; }
-    .hero-card { position:relative; min-height: 560px; border-radius: 44px; background: linear-gradient(145deg, rgba(255,255,255,.9), rgba(246,233,213,.78)); border:1px solid rgba(255,255,255,.86); box-shadow: var(--shadow); overflow: hidden; padding: 30px; }
-    .photo-mock { height: 315px; border-radius: 34px; background: linear-gradient(135deg, #f3e3cc, #fff9ee); border: 1px solid rgba(255,255,255,.84); box-shadow: 0 20px 54px rgba(87,48,25,.16); position: relative; overflow:hidden; }
-    .photo-mock:before { content:""; position:absolute; inset:0; background: radial-gradient(circle at 22% 22%, rgba(255,255,255,.86), transparent 20%), linear-gradient(120deg, rgba(36,95,79,.08), transparent 38%); }
-    .tray { position:absolute; left: 42px; right: 42px; bottom: 42px; height: 118px; border-radius: 28px; background: linear-gradient(135deg, #caa06b, #8f5d31); box-shadow: 0 24px 48px rgba(74,43,22,.22); transform: rotate(-2deg); }
-    .candy-row { position:absolute; left: 70px; right: 70px; bottom: 86px; display:flex; justify-content:space-between; }
-    .wrap-candy { width: 74px; height: 46px; border-radius: 999px; background: rgba(255,255,255,.86); border: 1px solid rgba(130,78,42,.14); box-shadow: 0 10px 24px rgba(74,43,22,.16); display:grid; place-items:center; font-size:11px; font-weight:950; color:#8a4a22; }
-    .photo-badge { position:absolute; left:18px; top:18px; padding:8px 12px; border-radius:999px; background:rgba(255,255,255,.9); color:#7b4a2b; font-size:12px; font-weight:900; backdrop-filter: blur(10px); }
-    .config-panel { position:absolute; left: 30px; right:30px; bottom:30px; background: rgba(255,255,255,.88); backdrop-filter: blur(16px); border:1px solid var(--line); border-radius: 30px; padding: 20px; }
-    .config-row { display:grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    label { font-size:12px; color:var(--muted); font-weight:900; display:block; margin-bottom:6px; }
-    input, select, textarea { width:100%; border:1px solid var(--line); border-radius:16px; background:#fff; padding: 12px 14px; color:var(--ink); outline: none; }
-    input:focus, select:focus, textarea:focus { border-color: rgba(168,95,42,.55); box-shadow: 0 0 0 4px rgba(168,95,42,.12); }
-    .section { padding: 74px 0; }
-    .section-head { display:flex; align-items:end; justify-content:space-between; gap: 24px; margin-bottom: 28px; }
-    .section h2 { font-size: clamp(30px, 4vw, 48px); line-height:1.08; letter-spacing:-.05em; margin:0; }
-    .section p.sub { color:var(--muted); margin:8px 0 0; max-width:620px; }
-    .cards, .products { display:grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .card { background: rgba(255,255,255,.8); border:1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: 0 16px 48px rgba(87,48,25,.08); }
-    .product { overflow:hidden; padding:0; }
-    .product-art { height: 220px; display:grid; place-items:center; background: linear-gradient(135deg, rgba(168,95,42,.12), rgba(214,168,79,.18)); position:relative; overflow:hidden; }
-    .product-art img { width:100%; height:100%; object-fit:cover; display:block; transition:.35s ease; }
-    .product:hover .product-art img { transform: scale(1.04); }
-    .product-art .mini-scene { width: 82%; height: 72%; border-radius: 28px; background: rgba(255,255,255,.75); border: 1px solid rgba(255,255,255,.9); box-shadow: 0 22px 42px rgba(87,48,25,.14); display:flex; align-items:center; justify-content:center; gap: 12px; }
-    .mini-candy { width: 54px; height: 36px; border-radius:999px; background:#fff; border:1px solid rgba(120,75,40,.12); display:grid; place-items:center; font-size:10px; font-weight:950; color:#8a4a22; box-shadow:0 8px 18px rgba(80,44,20,.12); }
-    .product-body { padding: 22px; }
-    .product-body h3 { margin: 10px 0 8px; font-size: 20px; }
-    .product-body p { color: var(--muted); margin: 0; }
-    .price { display:flex; justify-content:space-between; align-items:center; margin-top: 16px; font-weight:900; }
-    .tag { color:#865022; background:#fff1dc; border-radius:999px; padding:5px 9px; font-size:12px; font-weight:900; }
-    .product-note { font-size:12px; color:var(--muted); margin-top:10px; }
-    .card-icon { width:46px; height:46px; border-radius:17px; display:grid; place-items:center; font-size:24px; background: #fff3e6; margin-bottom: 16px; }
-    .card h3 { margin: 0 0 8px; font-size: 20px; letter-spacing:-.02em; }
-    .card p { margin:0; color:var(--muted); }
-    .builder { display:grid; grid-template-columns: .9fr 1.1fr; gap: 22px; align-items:start; }
-    .summary-box { position:sticky; top: 96px; background: #21150f; color:#fff; border-radius: 32px; padding: 28px; box-shadow: var(--shadow); }
-    .summary-box h3 { margin:0 0 14px; font-size:26px; letter-spacing:-.03em; }
-    .summary-line { display:flex; justify-content:space-between; gap:16px; padding: 12px 0; border-bottom:1px solid rgba(255,255,255,.12); color: rgba(255,255,255,.78); }
-    .summary-line strong { color:#fff; }
-    .estimate-total { font-size:34px; letter-spacing:-.04em; }
-    .contact-actions { display:grid; gap:10px; margin-top:14px; }
-    .contact-actions .btn { width:100%; }
-    .form-grid { display:grid; grid-template-columns: 1fr 1fr; gap:14px; }
-    .full { grid-column: 1 / -1; }
-    .notice { margin-top: 14px; padding: 14px; border-radius: 18px; background: rgba(214,168,79,.20); color:#6d4422; font-size: 13px; font-weight:800; }
-    .cases { display:grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-    .case { display:flex; gap:18px; align-items:flex-start; }
-    .case .avatar { flex:0 0 auto; width:58px; height:58px; border-radius:22px; background: linear-gradient(135deg, var(--brand), var(--gold)); display:grid; place-items:center; color:#fff; font-weight:950; }
-    .faq { display:grid; gap: 10px; }
-    details { background: rgba(255,255,255,.8); border:1px solid var(--line); border-radius: 22px; padding: 18px 20px; }
-    summary { cursor:pointer; font-weight:900; }
-    details p { color:var(--muted); margin: 12px 0 0; }
-    .footer { padding: 44px 0; color:var(--muted); border-top:1px solid var(--line); }
-    .toast { position: fixed; right: 22px; bottom: 22px; transform: translateY(120px); opacity:0; transition:.3s ease; background:#21150f; color:#fff; padding: 16px 18px; border-radius: 18px; box-shadow: var(--shadow); z-index:20; font-weight:850; }
-    .toast.show { transform: translateY(0); opacity:1; }
-    @media (max-width: 880px) {
-      .nav-links { display:none; }
-      .hero-grid, .builder { grid-template-columns:1fr; }
-      .cards, .products, .cases { grid-template-columns:1fr; }
-      .section-head { display:block; }
+    .container { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+    .small { font-size: 13px; color: var(--muted); }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 253, 248, .82);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(18px);
     }
-    @media (max-width: 560px) {
-      .container { width:min(100% - 24px, 1140px); }
-      .nav-actions .btn-ghost { display:none; }
-      .hero { padding-top:44px; }
-      .config-row, .form-grid { grid-template-columns:1fr; }
-      .hero-card { padding:18px; border-radius:30px; }
-      .config-panel { left:18px; right:18px; bottom:18px; }
-      .photo-mock { height:290px; }
-      .candy-row { left:34px; right:34px; }
-      .wrap-candy { width:58px; }
+    .nav-inner {
+      height: 74px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 22px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 820;
+      letter-spacing: .12em;
+    }
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border: 1px solid rgba(255,255,255,.26);
+      border-radius: 50%;
+      background:
+        linear-gradient(90deg, transparent 47%, rgba(255,255,255,.42) 48%, rgba(255,255,255,.42) 52%, transparent 53%),
+        radial-gradient(circle at 35% 30%, #e7c879, #b87542 52%, #63341e 100%);
+      box-shadow: 0 0 0 1px rgba(54,39,29,.16), 0 12px 24px rgba(72,38,18,.18);
+    }
+    .nav-links { display: flex; align-items: center; gap: 22px; color: #584c43; font-size: 13px; font-weight: 720; }
+    .nav-links a { transition: color .18s ease; }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 44px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 780;
+      font-size: 14px;
+      letter-spacing: -.01em;
+      cursor: pointer;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+      white-space: nowrap;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { color: #fff; background: #1c1510; border-color: rgba(255,255,255,.12); box-shadow: 0 16px 34px rgba(18, 11, 7, .23); }
+    .btn-primary:hover { background: #2a1d15; }
+    .btn-copper { color: #fff; background: linear-gradient(135deg, var(--copper-dark), var(--copper)); box-shadow: 0 16px 34px rgba(154, 89, 46, .24); }
+    .btn-light { background: rgba(255,255,255,.78); border-color: var(--line); color: var(--ink); }
+    .btn-light:hover { background: #fff; border-color: rgba(54,39,29,.23); }
+    .btn-line { background: transparent; border-color: rgba(255,255,255,.22); color: #fff; }
+    .btn-line:hover { background: rgba(255,255,255,.08); }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 72px 0 54px;
+      color: #fff;
+      background:
+        radial-gradient(circle at 76% 12%, rgba(201,161,90,.22), transparent 30%),
+        radial-gradient(circle at 4% 10%, rgba(184,117,66,.18), transparent 28%),
+        linear-gradient(135deg, #17110d 0%, #241710 52%, #13100d 100%);
+    }
+    .hero:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .26;
+      background-image: linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(180deg, #000, transparent 72%);
+    }
+    .hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: .96fr 1.04fr;
+      align-items: center;
+      gap: 52px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 999px;
+      color: rgba(255,255,255,.82);
+      background: rgba(255,255,255,.065);
+      font-size: 13px;
+      font-weight: 760;
+    }
+    .eyebrow:before, .kicker:before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 4px rgba(201,161,90,.14);
+      flex: 0 0 auto;
+    }
+    h1 {
+      margin: 22px 0 20px;
+      font-size: clamp(40px, 5.8vw, 68px);
+      line-height: 1.05;
+      letter-spacing: -.065em;
+    }
+    .hero-lead { max-width: 640px; color: rgba(255,255,255,.76); font-size: 17px; margin: 0 0 28px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+    .hero-proof { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 32px; max-width: 640px; }
+    .proof-item { border-top: 1px solid rgba(255,255,255,.18); padding-top: 13px; }
+    .proof-item strong { display: block; font-size: 20px; letter-spacing: -.04em; }
+    .proof-item span { color: rgba(255,255,255,.62); font-size: 12px; }
+    .hero-media {
+      position: relative;
+      border-radius: 34px;
+      overflow: hidden;
+      min-height: 560px;
+      background: #221812;
+      box-shadow: 0 34px 90px rgba(0,0,0,.42);
+      border: 1px solid rgba(255,255,255,.13);
+    }
+    .hero-media img { width: 100%; height: 560px; object-fit: cover; }
+    .hero-media:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 42%, rgba(0,0,0,.58));
+      pointer-events: none;
+    }
+    .media-caption {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 22px;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: 14px;
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(18, 13, 10, .62);
+      border: 1px solid rgba(255,255,255,.13);
+      backdrop-filter: blur(16px);
+    }
+    .media-caption b { display: block; font-size: 17px; }
+    .media-caption span { display: block; color: rgba(255,255,255,.68); font-size: 12px; }
+    .caption-price { color: #f3d99d; font-weight: 820; }
+
+    .metrics {
+      padding: 22px 0;
+      background: #fffaf2;
+      border-bottom: 1px solid var(--line);
+    }
+    .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; border: 1px solid var(--line); border-radius: 24px; overflow: hidden; background: var(--line); }
+    .metric { background: rgba(255,255,255,.74); padding: 22px; }
+    .metric strong { display: block; font-size: 24px; letter-spacing: -.045em; }
+    .metric span { color: var(--muted); font-size: 13px; }
+
+    .section { padding: 86px 0; }
+    .section.alt { background: var(--ivory); border-block: 1px solid var(--line); }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+    .kicker { display: inline-flex; align-items: center; gap: 10px; color: var(--copper-dark); font-size: 13px; font-weight: 820; margin-bottom: 10px; }
+    h2 { margin: 0; font-size: clamp(31px, 4vw, 50px); line-height: 1.08; letter-spacing: -.055em; }
+    .sub { max-width: 660px; margin: 12px 0 0; color: var(--muted); }
+
+    .use-grid, .plan-grid, .proposal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card {
+      background: rgba(255,255,255,.78);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 18px 52px rgba(41, 27, 18, .07);
+    }
+    .use-card { overflow: hidden; }
+    .use-card img { width: 100%; height: 240px; object-fit: cover; }
+    .card-body { padding: 24px; }
+    .label { display: inline-flex; align-items: center; height: 28px; padding: 0 10px; border-radius: 999px; border: 1px solid rgba(184,117,66,.24); background: #fff5e8; color: #84502e; font-size: 12px; font-weight: 780; }
+    h3 { margin: 14px 0 8px; font-size: 21px; line-height: 1.3; letter-spacing: -.025em; }
+    .card p { margin: 0; color: var(--muted); }
+
+    .plans-wrap { display: grid; grid-template-columns: 1fr .86fr; gap: 22px; align-items: start; }
+    .plan-grid { grid-template-columns: 1fr; }
+    .plan-card { display: grid; grid-template-columns: 174px 1fr; overflow: hidden; }
+    .plan-card img { width: 100%; height: 100%; min-height: 190px; object-fit: cover; }
+    .plan-content { padding: 23px; }
+    .plan-top { display: flex; justify-content: space-between; gap: 14px; align-items: flex-start; }
+    .price { white-space: nowrap; font-weight: 850; color: var(--ink); }
+    .price b { font-size: 25px; letter-spacing: -.045em; }
+    .spec-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .spec-list span { border: 1px solid var(--line); background: rgba(255,255,255,.72); border-radius: 999px; padding: 6px 9px; font-size: 12px; color: #66584e; font-weight: 720; }
+
+    .estimate-card {
+      position: sticky;
+      top: 96px;
+      padding: 26px;
+      background: #19130f;
+      color: #fff;
+      border-color: rgba(255,255,255,.12);
+      box-shadow: 0 30px 90px rgba(24,15,9,.28);
+    }
+    .estimate-card h3 { margin-top: 0; font-size: 26px; }
+    .estimate-card .sub { color: rgba(255,255,255,.62); margin-bottom: 20px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .full { grid-column: 1 / -1; }
+    label { display: block; margin-bottom: 7px; color: rgba(33,24,18,.72); font-size: 12px; font-weight: 800; }
+    .estimate-card label { color: rgba(255,255,255,.66); }
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      color: var(--ink);
+      padding: 12px 13px;
+      outline: none;
+      transition: border-color .18s ease, box-shadow .18s ease;
+    }
+    .estimate-card input, .estimate-card select, .estimate-card textarea { border-color: rgba(255,255,255,.14); background: rgba(255,255,255,.08); color: #fff; }
+    .estimate-card select option { color: var(--ink); }
+    input:focus, select:focus, textarea:focus { border-color: rgba(184,117,66,.65); box-shadow: 0 0 0 4px rgba(184,117,66,.14); }
+    textarea { resize: vertical; min-height: 92px; }
+    .summary {
+      margin: 18px 0;
+      padding: 18px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 18px;
+      background: rgba(255,255,255,.065);
+    }
+    .summary-row { display: flex; justify-content: space-between; gap: 14px; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,.09); color: rgba(255,255,255,.68); }
+    .summary-row:first-child { padding-top: 0; }
+    .summary-row:last-child { border-bottom: 0; padding-bottom: 0; }
+    .summary-row strong { color: #fff; text-align: right; }
+    .total strong { color: #f0d391; font-size: 30px; letter-spacing: -.045em; }
+    .notice { margin-top: 12px; padding: 12px 13px; border-radius: 14px; background: rgba(201,161,90,.12); border: 1px solid rgba(201,161,90,.22); color: rgba(255,255,255,.72); font-size: 12px; }
+    .error { display: none; margin-top: 8px; color: #ffe0c4; font-size: 12px; }
+    .error.show { display: block; }
+
+    .process-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: 28px; align-items: center; }
+    .process-image { border-radius: 30px; overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--line); }
+    .process-image img { width: 100%; height: 520px; object-fit: cover; }
+    .steps { display: grid; gap: 10px; counter-reset: step; }
+    .step { position: relative; display: grid; grid-template-columns: 54px 1fr; gap: 16px; align-items: start; padding: 18px; border-radius: 20px; border: 1px solid var(--line); background: rgba(255,255,255,.76); }
+    .step:before { counter-increment: step; content: counter(step, decimal-leading-zero); display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; background: var(--ink); color: #fff; font-weight: 820; font-size: 13px; }
+    .step h3 { margin: 0 0 4px; font-size: 18px; }
+
+    .proposal-card { padding: 24px; }
+    .proposal-card .number { color: var(--copper-dark); font-weight: 850; font-size: 13px; }
+    .quote { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--ink-soft); font-weight: 720; }
+
+    .faq { display: grid; gap: 10px; }
+    details { background: rgba(255,255,255,.8); border: 1px solid var(--line); border-radius: 20px; padding: 18px 20px; }
+    summary { cursor: pointer; font-weight: 820; }
+    details p { margin: 11px 0 0; color: var(--muted); }
+
+    .final-cta {
+      padding: 82px 0;
+      color: #fff;
+      background:
+        linear-gradient(90deg, rgba(22,17,13,.94), rgba(22,17,13,.72)),
+        url('assets/gift-box-premium.png') center/cover;
+    }
+    .final-box { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; }
+    .final-box h2 { max-width: 760px; }
+    .final-box p { color: rgba(255,255,255,.72); max-width: 680px; }
+    .footer { padding: 34px 0; border-top: 1px solid var(--line); color: var(--muted); background: #fffaf2; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .toast { position: fixed; right: 22px; bottom: 22px; z-index: 80; transform: translateY(120px); opacity: 0; transition: .28s ease; background: #19130f; color: #fff; border: 1px solid rgba(255,255,255,.12); border-radius: 16px; padding: 14px 16px; box-shadow: var(--shadow); font-weight: 760; }
+    .toast.show { transform: translateY(0); opacity: 1; }
+
+    @media (max-width: 980px) {
+      .nav-links { display: none; }
+      .hero-grid, .plans-wrap, .process-layout, .final-box { grid-template-columns: 1fr; }
+      .hero-media, .hero-media img { min-height: auto; height: auto; }
+      .estimate-card { position: static; }
+      .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+      .use-grid, .proposal-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .container { width: min(100% - 24px, 1160px); }
+      .nav-inner { height: 66px; }
+      .nav-actions .btn-light { display: none; }
+      .hero { padding: 46px 0 38px; }
+      .hero-grid { gap: 28px; }
+      .hero-proof, .metrics-grid, .form-grid { grid-template-columns: 1fr; }
+      .media-caption { position: relative; left: auto; right: auto; bottom: auto; margin: -88px 14px 14px; grid-template-columns: 1fr; }
+      .section { padding: 62px 0; }
+      .section-head { display: block; }
+      .plan-card { grid-template-columns: 1fr; }
+      .plan-card img { height: 220px; }
+      .process-image img { height: 330px; }
+      h1 { letter-spacing: -.065em; }
     }
   </style>
 </head>
 <body>
-  <nav class="nav">
+  <nav class="nav" aria-label="メインナビゲーション">
     <div class="container nav-inner">
-      <a class="brand" href="#top" aria-label="AMEIRO トップへ"><span class="brand-mark"></span><span>AMEIRO</span></a>
+      <a class="brand" href="#top" aria-label="AMEIRO トップへ"><span class="brand-mark" aria-hidden="true"></span><span>AMEIRO</span></a>
       <div class="nav-links">
-        <a href="#products">用途</a>
-        <a href="#builder">見積もり</a>
-        <a href="#cases">提案例</a>
+        <a href="#usecases">用途</a>
+        <a href="#plans">料金</a>
+        <a href="#process">制作の流れ</a>
+        <a href="#proposals">事例</a>
         <a href="#faq">FAQ</a>
       </div>
       <div class="nav-actions">
-        <a class="btn btn-ghost" href="#faq">納期を見る</a>
-        <a class="btn btn-primary" href="#builder">無料で見積もる</a>
+        <a class="btn btn-light" href="#plans">料金を見る</a>
+        <a class="btn btn-primary" href="#estimate">相談する</a>
       </div>
     </div>
   </nav>
@@ -148,252 +370,336 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <span class="eyebrow">🍬 飲食店・イベント主催者向け / 3,000粒〜</span>
-          <h1>お店とイベントの印象を、<br><span class="gradient-text">持ち帰られる飴</span>に。</h1>
-          <p class="lead">飲食店の来店特典、周年記念、イベント受付で配れるオーダーメイド飴。ロゴ・色・味を反映した個包装ノベルティで、安っぽく見せず、会話のきっかけを作ります。</p>
+          <span class="eyebrow">法人向けオーダーメイド飴 / 3,000粒から</span>
+          <h1>お店の記憶に残る、<br>オリジナルキャンディを。</h1>
+          <p class="hero-lead">飲食店・カフェ・展示会・地域イベント向け。ロゴやブランドカラーを反映した個包装キャンディを、小ロットから無理なく制作できます。配って終わりにしない、体験価値のあるノベルティへ。</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#builder">30秒で概算見積もり</a>
-            <a class="btn btn-ghost" href="#products">用途別プランを見る</a>
+            <a class="btn btn-copper" href="#estimate">30秒で概算見積もり</a>
+            <a class="btn btn-line" href="#process">制作の流れを見る</a>
           </div>
-          <div class="trust">
-            <span>✓ 参考価格 1粒¥20〜</span><span>✓ 個包装対応</span><span>✓ 通常2週間〜1ヶ月</span><span>✓ データ入稿サポート</span>
+          <div class="hero-proof" aria-label="対応概要">
+            <div class="proof-item"><strong>3,000粒〜</strong><span>テスト導入しやすい最小ロット</span></div>
+            <div class="proof-item"><strong>個包装</strong><span>受付・会計・同梱で配りやすい仕様</span></div>
+            <div class="proof-item"><strong>14営業日〜</strong><span>デザイン確定後の納期目安</span></div>
           </div>
         </div>
+        <figure class="hero-media">
+          <img src="assets/premium-hero-candy.png" alt="ロゴ入り個包装キャンディのプレミアムな商品写真" />
+          <figcaption class="media-caption">
+            <span><b>ブランドカラー・ロゴ・味を一体で設計</b><span>飲食店の会計時、イベント受付、周年ギフトまで使える法人ノベルティ。</span></span>
+            <span class="caption-price">¥20/粒〜</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
 
-        <aside class="hero-card" aria-label="飲食店・イベント向け商品イメージ">
-          <div class="photo-mock">
-            <img src="assets/hero-b2b-restaurant.png" alt="飲食店向けオーダーメイド飴の商品イメージ" style="width:100%;height:100%;object-fit:cover;display:block;">
-            <span class="photo-badge">飲食店・イベント向け</span>
+    <section class="metrics" aria-label="信用情報">
+      <div class="container metrics-grid">
+        <div class="metric"><strong>国内製造想定</strong><span>食品表示・賞味期限など実務面を確認</span></div>
+        <div class="metric"><strong>3,000粒</strong><span>最小ロットを明確化し、見積もりを簡単に</span></div>
+        <div class="metric"><strong>個包装</strong><span>配布・保管・持ち帰りに適した仕様</span></div>
+        <div class="metric"><strong>データ確認</strong><span>制作前にロゴと印刷範囲を確認</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="usecases">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="kicker">Use cases</span>
+            <h2>飲食店とイベントの「渡す瞬間」を設計します。</h2>
+            <p class="sub">かわいいだけのキャンディではなく、再来店・SNS投稿・受付体験・記念品として機能する提案に整えます。</p>
           </div>
-          <div class="config-panel">
-            <div class="config-row">
-              <div>
-                <label for="logoText">入れたいロゴ/文字</label>
-                <input id="logoText" value="SHOP NAME" maxlength="16" />
+          <a class="btn btn-light" href="#estimate">用途を相談する</a>
+        </div>
+        <div class="use-grid">
+          <article class="card use-card">
+            <img src="assets/hero-b2b-restaurant.png" alt="レストランやカフェで配布するロゴ入りキャンディ" />
+            <div class="card-body">
+              <span class="label">Restaurant / Cafe</span>
+              <h3>会計時・テイクアウト同梱</h3>
+              <p>小さく持ち帰れるブランド接点。ショップカードより自然に手に取られ、再来店のきっかけを作ります。</p>
+            </div>
+          </article>
+          <article class="card use-card">
+            <img src="assets/event-handoff.png" alt="イベント受付で個包装キャンディを手渡すシーン" />
+            <div class="card-body">
+              <span class="label">Exhibition / Event</span>
+              <h3>受付・入場特典・ブース配布</h3>
+              <p>軽くて配りやすく、名刺やチラシと一緒に渡しやすい。イベントカラーやスポンサー名の展開にも向いています。</p>
+            </div>
+          </article>
+          <article class="card use-card">
+            <img src="assets/gift-box-premium.png" alt="周年記念向けの上質なギフトボックス入りキャンディ" />
+            <div class="card-body">
+              <span class="label">Anniversary / Gift</span>
+              <h3>周年記念・地域企画のギフト</h3>
+              <p>箱入り・複数フレーバー・限定カラーで、少し上質な記念品へ。来賓や常連客への手土産にも使えます。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="plans">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="kicker">Plans & Estimate</span>
+            <h2>営業提案しやすい3つの料金目安。</h2>
+            <p class="sub">最小ロットはすべて3,000粒。数量・印刷内容・包装仕様により正式金額は変動しますが、初回相談前の目安として使えます。</p>
+          </div>
+        </div>
+        <div class="plans-wrap">
+          <div class="plan-grid">
+            <article class="card plan-card">
+              <img src="assets/premium-hero-candy.png" alt="定番キャンディプランの商品写真" />
+              <div class="plan-content">
+                <div class="plan-top"><div><span class="label">Standard</span><h3>定番キャンディ</h3></div><div class="price"><b>¥20</b>/粒〜</div></div>
+                <p>ロゴ・店名・ブランドカラーを反映した個包装。飲食店の来店特典やテイクアウト同梱に。</p>
+                <div class="spec-list"><span>3,000粒〜</span><span>個包装</span><span>単色〜簡易デザイン</span></div>
               </div>
-              <div>
-                <label for="flavorSelect">味のイメージ</label>
-                <select id="flavorSelect">
-                  <option>レモンソーダ</option>
-                  <option>いちごミルク</option>
-                  <option>抹茶ラテ</option>
-                  <option>塩キャラメル</option>
+            </article>
+            <article class="card plan-card">
+              <img src="assets/event-handoff.png" alt="イベント配布プランの商品利用シーン" />
+              <div class="plan-content">
+                <div class="plan-top"><div><span class="label">Event</span><h3>イベント配布</h3></div><div class="price"><b>¥22</b>/粒〜</div></div>
+                <p>展示会・受付・地域イベントで配りやすい仕様。イベント名やスポンサー表記の相談も可能です。</p>
+                <div class="spec-list"><span>3,000粒〜</span><span>配布向け包装</span><span>複数納品先相談</span></div>
+              </div>
+            </article>
+            <article class="card plan-card">
+              <img src="assets/gift-box-premium.png" alt="ギフトBOXプランの商品写真" />
+              <div class="plan-content">
+                <div class="plan-top"><div><span class="label">Premium</span><h3>ギフトBOX</h3></div><div class="price"><b>¥28</b>/粒〜</div></div>
+                <p>周年記念・VIP向け・地域企画向け。箱入りや複数フレーバーで、記念品としての見栄えを高めます。</p>
+                <div class="spec-list"><span>3,000粒〜</span><span>BOX相談</span><span>周年・記念ロゴ</span></div>
+              </div>
+            </article>
+          </div>
+
+          <aside class="card estimate-card" id="estimate" aria-label="概算見積もりシミュレーター">
+            <h3>概算見積もり</h3>
+            <p class="sub">商品タイプと数量を選ぶと、営業相談用のメール文面まで自動で作成します。</p>
+            <form id="estimateForm" class="form-grid">
+              <div class="full">
+                <label for="productSelect">商品タイプ</label>
+                <select id="productSelect">
+                  <option value="standard" data-unit="20" data-lead="14〜21営業日">定番キャンディ</option>
+                  <option value="event" data-unit="22" data-lead="14〜25営業日">イベント配布</option>
+                  <option value="gift" data-unit="28" data-lead="21〜30営業日">ギフトBOX</option>
                 </select>
               </div>
-            </div>
-            <div class="notice">上のビジュアルはLP用の簡易イメージです。実制作ではロゴデータ確認後に仕上がりイメージを共有します。</div>
-          </div>
-        </aside>
+              <div>
+                <label for="qtyInput">数量（粒）</label>
+                <input id="qtyInput" type="number" min="3000" step="500" value="3000" inputmode="numeric" />
+                <div id="qtyError" class="error">最小ロットは3,000粒です。3,000粒で計算します。</div>
+              </div>
+              <div>
+                <label for="deadline">希望納期</label>
+                <input id="deadline" type="date" />
+              </div>
+              <div class="full">
+                <label for="email">返信先メールアドレス</label>
+                <input id="email" type="email" placeholder="yourname@company.co.jp" autocomplete="email" />
+              </div>
+              <div class="full">
+                <label for="memo">用途・入れたい文字</label>
+                <textarea id="memo" placeholder="例：カフェの5周年で会計時に配布。ロゴと深いグリーンを使いたい。"></textarea>
+              </div>
+              <div class="summary" aria-live="polite">
+                <div class="summary-row"><span>商品</span><strong id="sumProduct">定番キャンディ</strong></div>
+                <div class="summary-row"><span>数量</span><strong id="sumQty">3,000粒</strong></div>
+                <div class="summary-row"><span>単価目安</span><strong id="sumUnit">¥20</strong></div>
+                <div class="summary-row"><span>納期目安</span><strong id="sumLead">14〜21営業日</strong></div>
+                <div class="summary-row total"><span>概算合計</span><strong id="sumTotal">¥60,000</strong></div>
+              </div>
+              <div class="full">
+                <button type="submit" class="btn btn-copper" style="width:100%;">この内容で相談メールを作成</button>
+                <a id="salesMail" class="btn btn-line" style="width:100%; margin-top:10px;" href="mailto:">メールリンクを開く</a>
+                <div class="notice">デモのため送信先は空のmailtoです。正式金額はロゴデータ・包装仕様・納品先の確認後に確定します。</div>
+              </div>
+            </form>
+          </aside>
+        </div>
       </div>
     </section>
 
-    <section class="section" id="products">
+    <section class="section" id="process">
+      <div class="container process-layout">
+        <figure class="process-image">
+          <img src="assets/process-craft.png" alt="オーダーメイドキャンディの制作工程と職人作業" />
+        </figure>
+        <div>
+          <span class="kicker">How it works</span>
+          <h2>相談から納品まで、法人購買で迷わない流れに。</h2>
+          <p class="sub">食品ノベルティは、見た目だけでなく納期・表示・配布方法の確認が重要です。初回相談で必要な情報を整理します。</p>
+          <div class="steps">
+            <div class="step"><div><h3>用途と数量を相談</h3><p>配布シーン、希望数量、納品日、予算感を確認します。</p></div></div>
+            <div class="step"><div><h3>ロゴ・ブランドカラー確認</h3><p>印刷範囲や可読性を確認し、仕上がりイメージを共有します。</p></div></div>
+            <div class="step"><div><h3>仕様・サンプル確認</h3><p>味、個包装、BOX、食品表示、納品先などを確定します。</p></div></div>
+            <div class="step"><div><h3>製造・検品</h3><p>確定仕様に沿って製造し、配布しやすい状態で整えます。</p></div></div>
+            <div class="step"><div><h3>納品・次回提案</h3><p>イベント後や周年後の反応を踏まえ、次の企画にも展開できます。</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="proposals">
       <div class="container">
         <div class="section-head">
           <div>
-            <h2>飲食店・イベント向けの3つの使い方</h2>
-            <p class="sub">営業で刺さりやすい用途に絞りました。飲食店の来店特典、イベント配布、周年記念の3軸で提案できます。</p>
+            <span class="kicker">Proposal examples</span>
+            <h2>「飴を作る」ではなく、目的別に提案できます。</h2>
+            <p class="sub">営業先で伝えやすいよう、導入目的・渡す場所・期待できる体験をセットで見せます。</p>
           </div>
-          <a class="btn btn-ghost" href="#builder">まとめて見積もり</a>
         </div>
-        <div class="products">
-          <article class="card product">
-            <div class="product-art"><img src="assets/hero-b2b-restaurant.png" alt="飲食店向けショップロゴ入りキャンディの商品イメージ"></div>
-            <div class="product-body">
-              <span class="tag">飲食店・店舗向け</span>
-              <h3>ショップロゴ入りキャンディ</h3>
-              <p>会計時・テイクアウト・来店特典に。店名やブランドカラーを入れて、再来店のきっかけに。</p>
-              <div class="price"><span>3,000粒〜</span><strong>¥20/粒〜</strong></div>
-              <p class="product-note">※画像はLP用の制作イメージです。</p>
-            </div>
+        <div class="proposal-grid">
+          <article class="card proposal-card">
+            <span class="number">01 / Cafe anniversary</span>
+            <h3>カフェの周年キャンペーン</h3>
+            <p>周年ロゴを入れた限定フレーバーを会計時に配布。既存客への感謝を自然に伝える小さなギフトに。</p>
+            <div class="quote">提案例：3,000粒 × ¥20〜 / 会計時・テイクアウト同梱</div>
           </article>
-          <article class="card product">
-            <div class="product-art"><img src="assets/event-novelty.png" alt="イベント受付向け配布キャンディの商品イメージ"></div>
-            <div class="product-body">
-              <span class="tag">イベント受付向け</span>
-              <h3>イベント配布パック</h3>
-              <p>受付・入場特典・物販購入者特典に。軽くて配りやすく、余っても保管しやすい個包装。</p>
-              <div class="price"><span>3,000粒〜</span><strong>¥22/粒〜</strong></div>
-            </div>
+          <article class="card proposal-card">
+            <span class="number">02 / Exhibition booth</span>
+            <h3>展示会ブースの記憶づくり</h3>
+            <p>名刺交換や資料配布に添える個包装キャンディ。商談後に社名を思い出しやすい接点を残します。</p>
+            <div class="quote">提案例：5,000粒 × ¥22〜 / 受付・ノベルティ袋同梱</div>
           </article>
-          <article class="card product">
-            <div class="product-art"><img src="assets/product-gift-box.png" alt="周年記念向けノベルティBOXの商品イメージ"></div>
-            <div class="product-body">
-              <span class="tag">周年記念・地域企画</span>
-              <h3>記念ノベルティBOX</h3>
-              <p>周年・商店街企画・地域イベントに。箱入りやカラー展開で、少し上質な記念品に。</p>
-              <div class="price"><span>3,000粒〜</span><strong>¥28/粒〜</strong></div>
-            </div>
+          <article class="card proposal-card">
+            <span class="number">03 / Local project</span>
+            <h3>地域イベント・商店街企画</h3>
+            <p>地域名や企画カラーを入れた共通ノベルティ。複数店舗で同じ体験を作り、回遊促進にも使えます。</p>
+            <div class="quote">提案例：3,000粒 × ¥28〜 / BOX・協賛表記相談</div>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="features">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>初めてでも頼みやすい営業設計</h2>
-            <p class="sub">飲食店・イベント主催者が不安に感じる「小ロット」「納期」「デザイン確認」を先に潰します。</p>
-          </div>
-        </div>
-        <div class="cards">
-          <article class="card"><div class="card-icon">🎨</div><h3>デザイン確認つき</h3><p>入稿データを確認し、制作前に仕上がりイメージをメールで共有します。</p></article>
-          <article class="card"><div class="card-icon">📦</div><h3>小ロットから対応</h3><p>テスト販売やイベント規模に合わせ、100〜300袋から発注可能です。</p></article>
-          <article class="card"><div class="card-icon">🧾</div><h3>法人決済に対応</h3><p>請求書払い・領収書・納品先分割など、法人購買の実務に寄せています。</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="builder">
-      <div class="container builder">
-        <aside class="summary-box">
-          <h3>概算見積もり</h3>
-          <div class="summary-line"><span>商品</span><strong id="sumProduct">ショップロゴ入りキャンディ</strong></div>
-          <div class="summary-line"><span>数量</span><strong id="sumQty">3,000粒</strong></div>
-          <div class="summary-line"><span>単価目安</span><strong id="sumUnit">¥20</strong></div>
-          <div class="summary-line"><span>概算合計</span><strong id="sumTotal" class="estimate-total">¥60,000</strong></div>
-          <p style="color:rgba(255,255,255,.68); font-size:13px; margin:16px 0 0;">正式金額はデータ確認後に確定します。複雑な印刷・特殊包装は別途見積もり。</p>
-          <div class="contact-actions">
-            <a id="salesMail" class="btn btn-primary" href="mailto:">この内容で営業に相談する</a>
-            <a class="btn btn-line" href="#products">商品をもう一度見る</a>
-          </div>
-        </aside>
-        <div class="card">
-          <h2>30秒で概算見積もり</h2>
-          <p class="sub">数量を入れるだけで概算金額を表示。デモ段階では、内容をメールに入れて営業へ相談できる導線にしています。</p>
-          <form class="form-grid" id="estimateForm">
-            <div>
-              <label for="productSelect">商品タイプ</label>
-              <select id="productSelect">
-                <option data-unit="20">ショップロゴ入りキャンディ</option>
-                <option data-unit="22">イベント配布パック</option>
-                <option data-unit="28">記念ノベルティBOX</option>
-              </select>
-            </div>
-            <div>
-              <label for="qtyInput">数量（粒）</label>
-              <input id="qtyInput" type="number" min="3000" step="500" value="3000" />
-            </div>
-            <div>
-              <label for="deadline">希望納期</label>
-              <input id="deadline" type="date" />
-            </div>
-            <div>
-              <label for="email">メールアドレス</label>
-              <input id="email" type="email" placeholder="name@example.com" />
-            </div>
-            <div class="full">
-              <label for="memo">用途・入れたい文字</label>
-              <textarea id="memo" rows="4" placeholder="例：カフェの周年記念で配布。ロゴとブランドカラーの茶色を使いたい。"></textarea>
-            </div>
-            <div class="full">
-              <button type="submit" class="btn btn-primary" style="width:100%;">見積もり内容を作成して営業に相談する</button>
-              <div class="notice">デモではメール起動まで。実運用ではGoogleフォーム/CRM、Shopify/Stripe決済へ接続できます。</div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="cases">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>営業で提案しやすいシーン</h2>
-            <p class="sub">「飴を作れます」ではなく、集客・再来店・イベント体験のノベルティとして提案します。</p>
-          </div>
-        </div>
-        <div class="cases">
-          <article class="card case"><div class="avatar">店</div><div><h3>レストラン・カフェの来店特典</h3><p>会計時やテイクアウト袋に同梱。お店の記憶を持ち帰ってもらう小さな接点に。</p></div></article>
-          <article class="card case"><div class="avatar">受</div><div><h3>イベント受付・入場特典</h3><p>受付で配りやすく、写真にも映える。スポンサー名やイベントカラーの反映も可能。</p></div></article>
-          <article class="card case"><div class="avatar">祝</div><div><h3>周年祭・キャンペーン</h3><p>周年ロゴや限定カラーで、既存客への感謝と再来店促進に使えます。</p></div></article>
-          <article class="card case"><div class="avatar">街</div><div><h3>商店街・地域イベント</h3><p>地域名・名物カラー・イベントロゴを入れ、協賛企業にも提案しやすい配布物に。</p></div></article>
         </div>
       </div>
     </section>
 
     <section class="section" id="faq">
       <div class="container">
-        <div class="section-head"><div><h2>よくある質問</h2><p class="sub">購入前の不安をFAQで潰し、問い合わせ率を上げます。</p></div></div>
-        <div class="faq">
-          <details open><summary>最小ロットはいくつですか？</summary><p>基本仕様は1注文につき3,000粒からです。飲食店の来店特典・イベント配布など、用途に合わせて数量をご相談ください。</p></details>
-          <details><summary>ロゴデータが粗い場合も発注できますか？</summary><p>可能です。制作前にデータ確認を行い、必要に応じて簡易トレース・再入稿のご案内をします。</p></details>
-          <details><summary>納期はどれくらいですか？</summary><p>デザイン確定後、通常14〜21営業日です。繁忙期・大ロットの場合は余裕を持ってご相談ください。</p></details>
-          <details><summary>飲食店で配る場合、食品表示はどうなりますか？</summary><p>実運用時は製造元の仕様に合わせて、原材料・賞味期限・保存方法を商品ページと同梱資料に明記します。</p></details>
+        <div class="section-head">
+          <div>
+            <span class="kicker">FAQ</span>
+            <h2>よくある質問</h2>
+            <p class="sub">初回相談前に確認されやすいロット・納期・データ・表示まわりをまとめました。</p>
+          </div>
         </div>
+        <div class="faq">
+          <details open><summary>最小ロットはいくつですか？</summary><p>基本仕様は1注文につき3,000粒からです。数量は500粒単位で概算シミュレーターに入力できます。</p></details>
+          <details><summary>ロゴデータがまだ整っていなくても相談できますか？</summary><p>可能です。制作前にロゴデータの解像度・色・印刷範囲を確認し、必要に応じて再入稿や簡易調整の案内を行います。</p></details>
+          <details><summary>納期はどれくらいですか？</summary><p>目安はデザイン確定後14〜30営業日です。BOX仕様・大ロット・繁忙期は変動するため、イベント日が決まっている場合は早めの相談を推奨します。</p></details>
+          <details><summary>食品表示や賞味期限はどうなりますか？</summary><p>実運用時は製造元の仕様に合わせて、原材料・賞味期限・保存方法などを確認します。配布用途に合わせて必要な表示情報を事前に整理します。</p></details>
+          <details><summary>請求書払いや法人向けの書類対応はできますか？</summary><p>営業用デモでは導線のみですが、実運用時は見積書・請求書・領収書・納品先分割など法人購買に必要なフローを接続できます。</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta" id="contact">
+      <div class="container final-box">
+        <div>
+          <span class="eyebrow">Contact</span>
+          <h2>配って終わりにしない。記憶に残るノベルティを。</h2>
+          <p>用途・数量・納期が決まっていなくても大丈夫です。まずは概算見積もりで、営業先に提案できる価格感を確認してください。</p>
+        </div>
+        <a class="btn btn-copper" href="#estimate">概算見積もりへ進む</a>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container" style="display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;">
-      <strong style="color:var(--ink);">AMEIRO</strong>
-      <span>© 2026 AMEIRO Custom Candy. Prototype.</span>
+    <div class="container footer-inner">
+      <strong style="color:var(--ink); letter-spacing:.1em;">AMEIRO</strong>
+      <span>© 2026 AMEIRO Custom Candy. Static LP Prototype.</span>
     </div>
   </footer>
 
-  <div class="toast" id="toast">見積もりメールを作成しました（デモ）</div>
+  <div class="toast" id="toast" role="status" aria-live="polite">相談メールを作成しました（デモ）</div>
 
   <script>
-    const logoText = document.getElementById('logoText');
     const productSelect = document.getElementById('productSelect');
     const qtyInput = document.getElementById('qtyInput');
-    const sumProduct = document.getElementById('sumProduct');
-    const sumQty = document.getElementById('sumQty');
-    const sumUnit = document.getElementById('sumUnit');
-    const sumTotal = document.getElementById('sumTotal');
-    const toast = document.getElementById('toast');
-    const salesMail = document.getElementById('salesMail');
     const deadline = document.getElementById('deadline');
     const email = document.getElementById('email');
     const memo = document.getElementById('memo');
+    const sumProduct = document.getElementById('sumProduct');
+    const sumQty = document.getElementById('sumQty');
+    const sumUnit = document.getElementById('sumUnit');
+    const sumLead = document.getElementById('sumLead');
+    const sumTotal = document.getElementById('sumTotal');
+    const salesMail = document.getElementById('salesMail');
+    const qtyError = document.getElementById('qtyError');
+    const toast = document.getElementById('toast');
+    const estimateForm = document.getElementById('estimateForm');
 
-    function updateEstimate() {
+    const formatter = new Intl.NumberFormat('ja-JP');
+
+    function getEstimate() {
       const option = productSelect.selectedOptions[0];
-      const qty = Math.max(Number(qtyInput.value || 0), 3000);
+      const rawQty = Number(qtyInput.value || 0);
+      const qty = Math.max(rawQty, 3000);
       const unit = Number(option.dataset.unit);
-      const total = qty * unit;
-      sumProduct.textContent = option.textContent;
-      sumQty.textContent = `${qty.toLocaleString('ja-JP')}粒`;
-      sumUnit.textContent = `¥${unit.toLocaleString('ja-JP')}`;
-      sumTotal.textContent = `¥${total.toLocaleString('ja-JP')}`;
-      updateSalesMail();
+      const lead = option.dataset.lead;
+      return {
+        product: option.textContent.trim(),
+        qty,
+        rawQty,
+        unit,
+        lead,
+        total: qty * unit
+      };
     }
+
     function updateSalesMail() {
-      const option = productSelect.selectedOptions[0];
-      const qty = Math.max(Number(qtyInput.value || 0), 3000);
-      const unit = Number(option.dataset.unit);
-      const total = qty * unit;
-      const subject = `【概算見積もり相談】${option.textContent} ${qty}粒`;
+      const estimate = getEstimate();
+      const subject = `【概算見積もり相談】${estimate.product} ${formatter.format(estimate.qty)}粒`;
       const body = [
         '以下の内容で相談したいです。',
         '',
-        `商品：${option.textContent}`,
-        `数量：${qty.toLocaleString('ja-JP')}粒`,
-        `単価目安：¥${unit.toLocaleString('ja-JP')}`,
-        `概算合計：¥${total.toLocaleString('ja-JP')}`,
+        `商品：${estimate.product}`,
+        `数量：${formatter.format(estimate.qty)}粒`,
+        `単価目安：¥${formatter.format(estimate.unit)}`,
+        `概算合計：¥${formatter.format(estimate.total)}`,
+        `納期目安：${estimate.lead}`,
         `希望納期：${deadline.value || '未定'}`,
         `返信先：${email.value || '未入力'}`,
         '',
         `用途・入れたい文字：${memo.value || '未入力'}`,
         '',
-        '※この金額はLP上の簡易見積もりです。正式金額はデータ確認後に確定します。'
+        '※この金額はLP上の簡易見積もりです。正式金額はロゴデータ・包装仕様・納品先の確認後に確定します。'
       ].join('\n');
       salesMail.href = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     }
+
+    function updateEstimate() {
+      const estimate = getEstimate();
+      sumProduct.textContent = estimate.product;
+      sumQty.textContent = `${formatter.format(estimate.qty)}粒`;
+      sumUnit.textContent = `¥${formatter.format(estimate.unit)}`;
+      sumLead.textContent = estimate.lead;
+      sumTotal.textContent = `¥${formatter.format(estimate.total)}`;
+      qtyError.classList.toggle('show', estimate.rawQty > 0 && estimate.rawQty < 3000);
+      updateSalesMail();
+    }
+
     productSelect.addEventListener('change', updateEstimate);
     qtyInput.addEventListener('input', updateEstimate);
     deadline.addEventListener('input', updateSalesMail);
     email.addEventListener('input', updateSalesMail);
     memo.addEventListener('input', updateSalesMail);
-    document.getElementById('estimateForm').addEventListener('submit', e => {
-      e.preventDefault();
-      updateSalesMail();
+
+    estimateForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (Number(qtyInput.value || 0) < 3000) {
+        qtyInput.value = 3000;
+      }
+      updateEstimate();
       toast.classList.add('show');
       window.location.href = salesMail.href;
-      setTimeout(() => toast.classList.remove('show'), 2200);
+      setTimeout(() => toast.classList.remove('show'), 2400);
     });
+
     updateEstimate();
   </script>
 </body>
