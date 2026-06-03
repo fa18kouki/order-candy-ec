@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AMEIRO Static LP Concept</title>
+  <style>
+    :root {
+      --paper: #fffaf0;
+      --paper-deep: #f4ead9;
+      --washi: #f9f1e4;
+      --navy: #142238;
+      --navy-2: #0e192a;
+      --ink: #1f211d;
+      --muted: #6f665d;
+      --amber: #c77b2f;
+      --amber-2: #e2b464;
+      --red: #8e3d31;
+      --line: rgba(24, 34, 50, .14);
+      --shadow: 0 24px 70px rgba(35, 28, 19, .16);
+      --serif: "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+      --sans: "Hiragino Sans", "Yu Gothic", "Noto Sans JP", system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 100%; min-height: 100%; }
+    body {
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 14% 8%, rgba(199, 123, 47, .11), transparent 29%),
+        linear-gradient(90deg, rgba(20, 34, 56, .045) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(20, 34, 56, .035) 1px, transparent 1px),
+        var(--paper);
+      background-size: auto, 38px 38px, 38px 38px, auto;
+      font-family: var(--sans);
+      font-feature-settings: "palt" 1;
+      line-height: 1.7;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .34;
+      background-image:
+        linear-gradient(115deg, transparent 0 42%, rgba(95, 70, 44, .08) 42.4% 42.8%, transparent 43.2%),
+        radial-gradient(circle at 20% 20%, rgba(70, 55, 37, .08) 0 1px, transparent 1px);
+      background-size: 220px 170px, 21px 21px;
+      mix-blend-mode: multiply;
+    }
+    img { display: block; max-width: 100%; }
+    .page { width: 1440px; margin: 0 auto; overflow: hidden; background: rgba(255, 250, 240, .72); }
+    .container { width: 1180px; margin: 0 auto; }
+    .topbar {
+      height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--navy);
+      font-weight: 900;
+      letter-spacing: .15em;
+      font-size: 18px;
+    }
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background:
+        linear-gradient(90deg, transparent 43%, rgba(255,255,255,.58) 44% 55%, transparent 56%),
+        radial-gradient(circle at 35% 28%, #ffe8aa, #cd8138 48%, #6d321f 100%);
+      border: 1px solid rgba(75, 45, 25, .22);
+      box-shadow: inset 0 2px 6px rgba(255,255,255,.55), 0 12px 24px rgba(92, 51, 21, .18);
+    }
+    .nav-copy {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      color: #4d5a69;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .nav-copy .pill {
+      color: #fff;
+      background: var(--navy);
+      border-radius: 999px;
+      padding: 11px 18px;
+      box-shadow: 0 10px 22px rgba(20, 34, 56, .2);
+    }
+
+    .hero {
+      position: relative;
+      padding: 58px 0 74px;
+      background:
+        linear-gradient(115deg, rgba(255,250,240,.95) 0 52%, transparent 52.2%),
+        linear-gradient(135deg, rgba(20,34,56,.98), rgba(14,25,42,.96));
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 560px;
+      background:
+        linear-gradient(90deg, rgba(14,25,42,0), rgba(14,25,42,.55)),
+        repeating-linear-gradient(135deg, rgba(255,255,255,.06) 0 1px, transparent 1px 16px);
+    }
+    .hero-layout {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 560px 1fr;
+      gap: 62px;
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      color: var(--red);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .08em;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: var(--amber);
+    }
+    h1 {
+      margin: 22px 0 20px;
+      color: var(--navy);
+      font-family: var(--serif);
+      font-size: 66px;
+      line-height: 1.06;
+      letter-spacing: -.06em;
+      font-weight: 800;
+    }
+    .hero-lead {
+      margin: 0 0 28px;
+      width: 530px;
+      color: #4e4b45;
+      font-size: 18px;
+      line-height: 1.9;
+    }
+    .hero-actions { display: flex; gap: 12px; align-items: center; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 13px 22px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 900;
+    }
+    .button.primary { color: #fff; background: var(--navy); box-shadow: 0 14px 30px rgba(20, 34, 56, .24); }
+    .button.subtle { color: var(--navy); border: 1px solid var(--line); background: rgba(255,255,255,.66); }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 34px;
+    }
+    .stat {
+      padding: 15px 0 0;
+      border-top: 1px solid rgba(20, 34, 56, .2);
+    }
+    .stat b {
+      display: block;
+      color: var(--navy);
+      font-size: 25px;
+      line-height: 1.1;
+      letter-spacing: -.03em;
+    }
+    .stat span { color: #73695e; font-size: 12px; font-weight: 700; }
+
+    .product-stage {
+      position: relative;
+      padding: 24px;
+      border-radius: 34px;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.86), rgba(244,234,217,.8)),
+        var(--washi);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,.54);
+    }
+    .product-stage::before {
+      content: "個包装 / ロゴ印刷 / 色指定";
+      position: absolute;
+      right: 24px;
+      top: 24px;
+      z-index: 2;
+      padding: 8px 13px;
+      border-radius: 999px;
+      color: #fff;
+      background: rgba(20,34,56,.86);
+      font-size: 12px;
+      font-weight: 900;
+    }
+    .product-stage img {
+      height: 520px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 24px;
+      filter: saturate(.94) contrast(.98);
+    }
+    .sample-ticket {
+      position: absolute;
+      left: -26px;
+      bottom: 36px;
+      width: 244px;
+      padding: 18px;
+      background: #fffdf7;
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 50px rgba(36, 27, 17, .18);
+    }
+    .sample-ticket small { color: var(--muted); font-weight: 800; }
+    .sample-ticket strong { display: block; color: var(--navy); font-family: var(--serif); font-size: 27px; line-height: 1.18; margin-top: 5px; }
+
+    .proof-band {
+      padding: 30px 0;
+      background: #fffdf7;
+      border-block: 1px solid var(--line);
+    }
+    .proof-grid {
+      display: grid;
+      grid-template-columns: 1.15fr repeat(3, 1fr);
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+    .proof-item { padding: 22px 25px; border-left: 1px solid var(--line); }
+    .proof-item:first-child { border-left: 0; color: #fff; background: var(--navy); }
+    .proof-item small { display: block; color: var(--muted); font-size: 11px; font-weight: 900; letter-spacing: .12em; }
+    .proof-item:first-child small { color: rgba(255,255,255,.6); }
+    .proof-item b { display: block; margin-top: 4px; font-family: var(--serif); font-size: 19px; line-height: 1.38; }
+
+    section { padding: 74px 0; }
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 46px;
+      margin-bottom: 32px;
+    }
+    h2 {
+      margin: 0;
+      color: var(--navy);
+      font-family: var(--serif);
+      font-size: 43px;
+      line-height: 1.18;
+      letter-spacing: -.045em;
+    }
+    .section-head p {
+      margin: 0;
+      width: 430px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .use-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+    .use-card {
+      min-height: 360px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.78);
+      box-shadow: 0 15px 45px rgba(35, 28, 19, .08);
+    }
+    .use-card img {
+      width: 100%;
+      height: 168px;
+      object-fit: cover;
+      border-bottom: 1px solid var(--line);
+      filter: saturate(.9);
+    }
+    .use-card div { padding: 20px; }
+    .label {
+      display: inline-flex;
+      margin-bottom: 12px;
+      padding: 4px 10px;
+      color: var(--red);
+      background: #fff1df;
+      border: 1px solid rgba(199,123,47,.22);
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 900;
+    }
+    .use-card h3, .process-card h3, .price-card h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 20px;
+      line-height: 1.35;
+      letter-spacing: -.02em;
+    }
+    .use-card p, .process-card p, .price-card p { margin: 0; color: var(--muted); font-size: 14px; }
+
+    .dark-section {
+      color: #fff;
+      background:
+        linear-gradient(180deg, rgba(20,34,56,.98), rgba(14,25,42,.99)),
+        var(--navy);
+      border-block: 1px solid rgba(255,255,255,.12);
+    }
+    .dark-section h2 { color: #fff; }
+    .dark-section .section-head p { color: rgba(255,255,255,.66); }
+    .process-layout {
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      gap: 34px;
+      align-items: stretch;
+    }
+    .process-photo {
+      position: relative;
+      min-height: 484px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.16);
+      background: #0b1320;
+    }
+    .process-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: .84;
+    }
+    .process-photo::after {
+      content: "AMEIRO FACTORY";
+      position: absolute;
+      left: 24px;
+      bottom: 24px;
+      color: rgba(255,255,255,.76);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .16em;
+    }
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .process-card {
+      min-height: 150px;
+      padding: 24px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.13);
+    }
+    .process-card h3 { color: #fff; }
+    .process-card p { color: rgba(255,255,255,.68); }
+    .num {
+      display: inline-flex;
+      width: 34px;
+      height: 34px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      color: #1c2432;
+      background: var(--amber-2);
+      border-radius: 50%;
+      font-weight: 900;
+      font-size: 13px;
+    }
+
+    .price-area {
+      background:
+        linear-gradient(180deg, rgba(244,234,217,.72), rgba(255,250,240,.92)),
+        var(--paper-deep);
+    }
+    .price-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .price-card {
+      position: relative;
+      min-height: 330px;
+      padding: 28px;
+      background: rgba(255,255,255,.82);
+      border: 1px solid var(--line);
+      box-shadow: 0 16px 46px rgba(35, 28, 19, .09);
+    }
+    .price-card.featured {
+      color: #fff;
+      background: var(--navy);
+      border-color: rgba(255,255,255,.14);
+      transform: translateY(-10px);
+    }
+    .price-card.featured h3, .price-card.featured .amount { color: #fff; }
+    .price-card.featured p, .price-card.featured li { color: rgba(255,255,255,.7); }
+    .amount {
+      margin: 28px 0 12px;
+      color: var(--navy);
+      font-size: 35px;
+      font-weight: 900;
+      letter-spacing: -.05em;
+    }
+    .amount small { font-size: 14px; letter-spacing: 0; }
+    .price-card ul { margin: 18px 0 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+    .price-card li { color: #5d554e; font-size: 13px; }
+    .price-card li::before { content: "・"; color: var(--amber); font-weight: 900; }
+
+    .closing {
+      padding: 76px 0 88px;
+      background: #fffdf7;
+    }
+    .closing-box {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 40px;
+      align-items: center;
+      padding: 42px;
+      color: #fff;
+      background:
+        linear-gradient(135deg, rgba(20,34,56,.98), rgba(14,25,42,.96)),
+        var(--navy);
+      box-shadow: var(--shadow);
+    }
+    .closing h2 { color: #fff; font-size: 42px; }
+    .closing p { color: rgba(255,255,255,.7); margin: 14px 0 24px; width: 650px; }
+    .contact-panel {
+      padding: 24px;
+      color: var(--ink);
+      background: #fffaf0;
+      border: 1px solid rgba(255,255,255,.25);
+    }
+    .contact-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .contact-row b { color: var(--navy); text-align: right; }
+    .contact-row:last-child { border-bottom: 0; }
+    .footer-note {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 22px;
+      color: rgba(255,255,255,.48);
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="container topbar">
+      <div class="brand"><span class="brand-mark"></span>AMEIRO</div>
+      <nav class="nav-copy">
+        <span>用途から選ぶ</span>
+        <span>制作工程</span>
+        <span>価格目安</span>
+        <span class="pill">概算見積もり</span>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="container hero-layout">
+        <div>
+          <div class="eyebrow">法人向けオーダーメイド飴</div>
+          <h1>配ったあとも、<br>印象が残る<br>小さな贈りもの。</h1>
+          <p class="hero-lead">展示会、周年記念、採用イベント、店舗ノベルティに。ロゴ・色・個包装まで整えた、実用品質のキャンディを小ロットからご提案します。</p>
+          <div class="hero-actions">
+            <span class="button primary">用途に合わせて相談する</span>
+            <span class="button subtle">価格目安を見る</span>
+          </div>
+          <div class="hero-stats">
+            <div class="stat"><b>3,000粒〜</b><span>イベント配布に使いやすい最小目安</span></div>
+            <div class="stat"><b>個包装対応</b><span>手渡し・同梱にそのまま使える</span></div>
+            <div class="stat"><b>約3〜5週</b><span>仕様確定後の標準納期目安</span></div>
+          </div>
+        </div>
+        <div class="product-stage">
+          <img src="../assets/product-gift-box.png" alt="">
+          <div class="sample-ticket">
+            <small>BRAND SAMPLE</small>
+            <strong>ロゴ入り個包装<br>キャンディ</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="proof-band">
+      <div class="container proof-grid">
+        <div class="proof-item"><small>RELIABILITY</small><b>法人案件で必要な確認を、最初から整理。</b></div>
+        <div class="proof-item"><small>CHECK</small><b>色味・包装表示・納品形態を事前確認</b></div>
+        <div class="proof-item"><small>DELIVERY</small><b>会場直送・複数拠点納品も相談可能</b></div>
+        <div class="proof-item"><small>SUPPORT</small><b>デザイン未確定でもラフから提案</b></div>
+      </div>
+    </div>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <h2>目的別に、<br>ちょうどよい仕様を選ぶ。</h2>
+          <p>飴そのものの見栄えだけでなく、配布シーン、持ち帰りやすさ、社内稟議に通しやすい単価感まで含めて設計します。</p>
+        </div>
+        <div class="use-grid">
+          <article class="use-card">
+            <img src="../assets/event-novelty.png" alt="">
+            <div><span class="label">展示会・商談会</span><h3>名刺と一緒に渡せる個包装</h3><p>ブース来場者に配りやすい数量と、ブランドカラーに合わせた包装で設計。</p></div>
+          </article>
+          <article class="use-card">
+            <img src="../assets/gift-box-premium.png" alt="">
+            <div><span class="label">周年記念</span><h3>箱入りで記念品らしく</h3><p>社内外の挨拶に使える落ち着いた箱と、控えめなロゴ表現。</p></div>
+          </article>
+          <article class="use-card">
+            <img src="../assets/event-handoff.png" alt="">
+            <div><span class="label">採用イベント</span><h3>学生に持ち帰られるノベルティ</h3><p>パンフレット同梱や受付配布に向いた軽さと話題性を両立。</p></div>
+          </article>
+          <article class="use-card">
+            <img src="../assets/hero-b2b-restaurant.png" alt="">
+            <div><span class="label">店舗・ホテル</span><h3>会計時に添える小さなお礼</h3><p>ブランド体験を邪魔しない色味と、季節企画に合わせた展開。</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark-section">
+      <div class="container">
+        <div class="section-head">
+          <h2>制作工程を見える化し、<br>不安を減らす。</h2>
+          <p>初回相談から校了、製造、納品まで。法人案件で詰まりやすい確認事項を工程ごとに明確にします。</p>
+        </div>
+        <div class="process-layout">
+          <div class="process-photo"><img src="../assets/process-craft.png" alt=""></div>
+          <div class="process-grid">
+            <article class="process-card"><span class="num">01</span><h3>用途と数量の整理</h3><p>配布対象、納品日、予算感から最適な粒数と包装形態を決定。</p></article>
+            <article class="process-card"><span class="num">02</span><h3>色・ロゴ・包装設計</h3><p>ブランドカラー、ロゴサイズ、表示面の見え方をサンプル化。</p></article>
+            <article class="process-card"><span class="num">03</span><h3>校正と仕様確定</h3><p>印刷範囲、個包装表示、箱詰め単位を確認して製造へ進行。</p></article>
+            <article class="process-card"><span class="num">04</span><h3>製造・検品・納品</h3><p>イベント日から逆算し、会場や倉庫への納品形態まで調整。</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="price-area">
+      <div class="container">
+        <div class="section-head">
+          <h2>価格目安は、<br>稟議に出しやすく。</h2>
+          <p>最終金額は仕様により変動しますが、初回検討に必要な粒単価・包装・箱入りの目安を明記します。</p>
+        </div>
+        <div class="price-grid">
+          <article class="price-card">
+            <span class="label">配布重視</span>
+            <h3>個包装キャンディ</h3>
+            <p>展示会・採用イベントの大量配布向け。</p>
+            <div class="amount">20円〜<small> / 粒</small></div>
+            <ul><li>3,000粒から相談</li><li>ロゴ・色指定</li><li>会場直送対応</li></ul>
+          </article>
+          <article class="price-card featured">
+            <span class="label">おすすめ</span>
+            <h3>ブランド包装セット</h3>
+            <p>小袋・台紙・ブランドカラーを揃えたい案件に。</p>
+            <div class="amount">38円〜<small> / 粒</small></div>
+            <ul><li>個包装デザイン込み</li><li>複数味の組み合わせ</li><li>短冊・同梱物相談</li></ul>
+          </article>
+          <article class="price-card">
+            <span class="label">記念品向け</span>
+            <h3>箱入りギフト仕様</h3>
+            <p>周年記念・VIP向け挨拶品に。</p>
+            <div class="amount">780円〜<small> / 箱</small></div>
+            <ul><li>箱・帯・熨斗風ラベル</li><li>小ロット相談</li><li>納品先分割対応</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="container closing-box">
+        <div>
+          <h2>まずは配布シーンだけ、<br>教えてください。</h2>
+          <p>デザインデータがなくても、イベント名・数量・希望納期が分かれば概算をご案内できます。無理に派手にせず、企業ノベルティとして配りやすい仕上がりを一緒に整えます。</p>
+          <span class="button primary" style="background:#c77b2f;">概算見積もりを依頼する</span>
+        </div>
+        <div class="contact-panel">
+          <div class="contact-row"><span>初回確認</span><b>用途・数量・納期</b></div>
+          <div class="contact-row"><span>必要素材</span><b>ロゴ / ブランド色</b></div>
+          <div class="contact-row"><span>返信目安</span><b>1〜2営業日</b></div>
+          <div class="contact-row"><span>対応領域</span><b>飴・包装・箱・納品</b></div>
+        </div>
+        <div class="footer-note">
+          <span>AMEIRO ORDER CANDY CONCEPT MOCKUP</span>
+          <span>静止画カンプ / 1440px LP全体イメージ</span>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
