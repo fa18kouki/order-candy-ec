@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AMEIRO | 法人向けオーダーメイド飴・個包装キャンディOEM</title>
-  <meta name="description" content="法人向けオーダーメイド飴・個包装キャンディ・ノベルティOEM。飲食店、展示会、地域イベント、周年記念に。3,000粒から、1粒20円〜の概算見積もりに対応。" />
+  <title>飴屋MUSASHI | 法人向けオーダーメイド飴・個包装キャンディ</title>
+  <meta name="description" content="飴屋MUSASHIの法人向けオーダーメイド飴。伝統的な手作り製法で、ノベルティ・販促・周年記念・イベント配布に使える個包装キャンディを3,000粒〜、1粒20円〜、通常2週間〜1ヶ月で制作。" />
   <style>
     :root {
       --ink: #1f1712;
@@ -184,6 +184,10 @@
     .value-card { padding: 22px; border: 1px solid rgba(255,255,255,.12); border-radius: 22px; background: rgba(255,255,255,.06); }
     .value-card strong { display: block; color: #f1d798; margin-bottom: 5px; }
     .value-card span { color: rgba(255,255,255,.70); font-size: 14px; }
+    .official-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 18px; }
+    .official-card { padding: 22px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,.82); box-shadow: var(--shadow-sm); }
+    .official-card strong { display: block; color: var(--copper-2); margin-bottom: 5px; }
+    .official-card span { color: var(--muted); font-size: 14px; }
 
     .use-grid, .plan-grid, .faq-grid { display: grid; gap: 18px; }
     .use-grid { grid-template-columns: repeat(4, 1fr); }
@@ -288,7 +292,7 @@
       .mock-card, .mock-card img, .mock-card video { min-height: auto; height: auto; }
       .floating-note { right: 18px; }
       .estimate-card { position: static; }
-      .use-grid, .value-grid { grid-template-columns: 1fr 1fr; }
+      .use-grid, .value-grid, .official-grid { grid-template-columns: 1fr 1fr; }
       .proof-grid { grid-template-columns: 1fr 1fr; }
       .proof-item:nth-child(3) { border-left: 0; border-top: 1px solid var(--line); }
       .proof-item:nth-child(4) { border-top: 1px solid var(--line); }
@@ -309,7 +313,7 @@
       .eyebrow { max-width: 100%; white-space: normal; line-height: 1.45; }
       .hero-actions { display: grid; grid-template-columns: 1fr; width: 100%; }
       .hero-actions .btn { width: 100%; padding-inline: 12px; }
-      .trust-strip, .form-grid, .proof-grid, .use-grid, .value-grid, .film-grid { grid-template-columns: 1fr; }
+      .trust-strip, .form-grid, .proof-grid, .use-grid, .value-grid, .official-grid, .film-grid { grid-template-columns: 1fr; }
       .film-card video { height: 220px; }
       .proof-item { border-left: 0; border-top: 1px solid var(--line); }
       .proof-item:first-child { border-top: 0; }
@@ -336,7 +340,7 @@
 <body>
   <nav class="nav" aria-label="メインナビゲーション">
     <div class="container nav-inner">
-      <a class="brand" href="#top" aria-label="AMEIRO トップへ"><span class="brand-mark" aria-hidden="true"></span><span>AMEIRO</span></a>
+      <a class="brand" href="#top" aria-label="飴屋MUSASHI トップへ"><span class="brand-mark" aria-hidden="true"></span><span>飴屋MUSASHI</span></a>
       <div class="nav-links">
         <a href="#problem">課題</a>
         <a href="#value">提案価値</a>
@@ -348,7 +352,7 @@
       </div>
       <div class="nav-actions">
         <a class="btn btn-light" href="#estimate">概算見積もりを見る</a>
-        <a class="btn btn-primary" href="mailto:?subject=%E3%80%90AMEIRO%E3%80%91%E5%96%B6%E6%A5%AD%E7%9B%B8%E8%AB%87">営業相談する</a>
+        <a class="btn btn-primary" href="mailto:?subject=%E3%80%90%E9%A3%B4%E5%B1%8BMUSASHI%E3%80%91%E5%96%B6%E6%A5%AD%E7%9B%B8%E8%AB%87">営業相談する</a>
       </div>
     </div>
   </nav>
@@ -357,9 +361,9 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div>
-          <span class="eyebrow">BtoB向けオーダーメイド飴 / 個包装キャンディOEM</span>
-          <h1 id="hero-title">配ったあとも、<br>印象が残る<br>小さな贈りもの。</h1>
-          <p class="hero-lead">展示会・商談会、周年記念、採用イベント、店舗・ホテル向けに、ロゴやブランドカラーを反映した個包装キャンディを制作。自然に持ち帰られる「ブランド体験」として提案できます。</p>
+          <span class="eyebrow">飴屋MUSASHI / BtoB向けオーダーメイド飴</span>
+          <h1 id="hero-title">一粒に、<br>想いと伝統を込めて。</h1>
+          <p class="hero-lead">伝統的な手作り製法で、ノベルティや販促に使えるオリジナルキャンディを制作。ロゴ・企画名・ブランドカラーを反映し、会社の節目やイベントで記憶に残る一粒に仕立てます。</p>
           <div class="hero-actions">
             <a class="btn btn-copper" href="#estimate">概算見積もりを見る</a>
             <a class="btn btn-line-dark" href="#estimate">配布シーンを相談する</a>
@@ -367,20 +371,20 @@
           <div class="trust-strip" aria-label="信頼指標">
             <div class="trust-item"><strong>3,000粒〜</strong><span>初回導入しやすい最小ロット</span></div>
             <div class="trust-item"><strong>¥20/粒〜</strong><span>営業資料に載せやすい価格目安</span></div>
-            <div class="trust-item"><strong>14営業日〜</strong><span>イベント日から逆算しやすい納期目安</span></div>
+            <div class="trust-item"><strong>2週間〜1ヶ月</strong><span>通常納期の目安</span></div>
           </div>
         </div>
         <div class="hero-board reveal delay-1">
           <figure class="mock-card">
             <video src="assets/videos/candy-craft-process.mp4" poster="assets/premium-hero-candy.png" autoplay muted loop playsinline preload="metadata" aria-label="個包装キャンディの制作イメージ動画"></video>
             <figcaption class="mock-caption">
-              <span><b>ロゴ・色・味・包装まで設計</b><span>粗が目立つ大判写真ではなく、商品モックとして営業資料に馴染む見せ方に。</span></span>
+              <span><b>ロゴ・色・味・個包装まで相談</b><span>手作りで再現できる範囲を確認し、最適なデザインへ調整します。</span></span>
               <span class="price-badge">20円/粒〜</span>
             </figcaption>
           </figure>
           <div class="floating-note" aria-label="納期目安">
             <small>Lead time</small>
-            <strong>デザイン確定後<br>14営業日〜</strong>
+            <strong>通常<br>2週間〜1ヶ月</strong>
           </div>
         </div>
       </div>
@@ -388,9 +392,9 @@
 
     <section class="proof-band" aria-label="法人提案で伝えたい要点">
       <div class="container proof-grid">
-        <div class="proof-item"><small>Positioning</small><strong>営業資料に馴染む、上質な食品ノベルティ。</strong></div>
+        <div class="proof-item"><small>Brand</small><strong>飴屋MUSASHIの手作りオリジナルキャンディ。</strong></div>
         <div class="proof-item"><small>Scene</small><strong>会計時・受付・資料同梱で自然に手渡せる。</strong></div>
-        <div class="proof-item"><small>Design</small><strong>ロゴ、ブランドカラー、限定企画名を個包装へ。</strong></div>
+        <div class="proof-item"><small>Design</small><strong>ロゴ・色・企画名を、再現可能な形へ調整。</strong></div>
         <div class="proof-item"><small>Operation</small><strong>概算価格と納期を先に示し、提案しやすく。</strong></div>
       </div>
     </section>
@@ -450,8 +454,8 @@
         <div class="section-head">
           <div>
             <span class="eyebrow">Value proposition</span>
-            <h2 id="value-title">AMEIROが提案するのは、持ち帰れるブランド体験です。</h2>
-            <p class="sub dark-sub">飴は小さく、軽く、個包装で渡しやすい。会計時、展示会受付、周年ギフトのような「手渡しの瞬間」に合わせて設計することで、単なる販促物ではなく、ブランドの印象を残す接点になります。</p>
+            <h2 id="value-title">飴屋MUSASHIが提案するのは、持ち帰れるブランド体験です。</h2>
+            <p class="sub dark-sub">飴は小さく、軽く、個包装で渡しやすい。会計時、展示会受付、周年ギフトのような「手渡しの瞬間」に合わせて設計することで、単なる販促物ではなく、ブランドの印象を残す接点になります。創業100年の歴史を受け継いだ手作り飴の文脈も、営業時の話題になります。</p>
           </div>
         </div>
         <div class="value-grid">
@@ -459,6 +463,34 @@
           <div class="value-card"><strong>配りやすい</strong><span>個包装で衛生的に扱いやすく、受付・会計・資料同梱など幅広い現場に対応。</span></div>
           <div class="value-card"><strong>提案しやすい</strong><span>3,000粒〜、20円/粒〜の目安を明示。営業前の概算説明がしやすくなります。</span></div>
           <div class="value-card"><strong>広げやすい</strong><span>周年・季節企画・地域イベントなど、同じ型から別企画へ展開できます。</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="official-specs" aria-labelledby="official-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="kicker">Official details</span>
+            <h2 id="official-title">飴屋MUSASHIの公式情報を、営業LP上でも明示。</h2>
+            <p class="sub">元サイトの情報に合わせ、手作り製法・基本仕様・フレーバーをLP内に反映しました。営業先には「話題性のある販促物」「周年記念」「SNS映え」「インバウンド対策」の文脈で提案できます。</p>
+          </div>
+          <a class="btn btn-light" href="https://www.ameya-musashi.com/" target="_blank" rel="noopener">公式サイトを見る</a>
+        </div>
+        <div class="official-grid" aria-label="飴屋MUSASHI 基本仕様">
+          <div class="official-card"><strong>製法</strong><span>伝統的な手作り製法。職人が再現可能な範囲でデザインを確認。</span></div>
+          <div class="official-card"><strong>最小ロット</strong><span>1注文につき3,000粒〜。法人ノベルティとして数量設計しやすい。</span></div>
+          <div class="official-card"><strong>価格・納期</strong><span>参考価格は1粒20円〜。通常納期は2週間〜1ヶ月。</span></div>
+          <div class="official-card"><strong>サイズ・包装</strong><span>直径約2.2cm×厚さ約1cm。1粒ずつのピロー個包装。</span></div>
+        </div>
+        <div class="compare-table" aria-label="選べるフレーバー一覧">
+          <table>
+            <thead><tr><th>選べるフレーバー</th><th>公式掲載の13種類</th></tr></thead>
+            <tbody>
+              <tr><td>フルーツ系</td><td>りんご / オレンジ / グレープ / ピーチ / レモン / 西洋梨 / ストロベリー / ライチ</td></tr>
+              <tr><td>和・定番系</td><td>うめ / しそ / 抹茶 / コーラ / サイダー</td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
@@ -520,7 +552,7 @@
           <div>
             <span class="kicker">Plans & Estimate</span>
             <h2 id="plan-title">商品プランと価格目安。</h2>
-            <p class="sub">正式金額はデザイン、印刷範囲、包装仕様、納品先により変動します。営業前の概算として使える価格帯を明示しています。</p>
+            <p class="sub">正式金額はデザイン、再現範囲、包装仕様、納品先により変動します。飴屋MUSASHI公式情報の「3,000粒〜・20円/粒〜・通常2週間〜1ヶ月」を基準に、営業前の概算として使える価格帯を明示しています。</p>
           </div>
         </div>
         <div class="plans-wrap">
@@ -555,9 +587,9 @@
               <table>
                 <thead><tr><th>プラン</th><th>向いている用途</th><th>単価目安</th><th>納期目安</th></tr></thead>
                 <tbody>
-                  <tr><td>ロゴ入りキャンディ</td><td>会計時配布、同梱、店舗ノベルティ</td><td>20円/粒〜</td><td>14〜21営業日</td></tr>
-                  <tr><td>イベント配布パック</td><td>展示会、受付、資料袋同梱</td><td>22円/粒〜</td><td>14〜25営業日</td></tr>
-                  <tr><td>記念ノベルティBOX</td><td>周年記念、地域企画、来賓向け</td><td>28円/粒〜</td><td>21〜30営業日</td></tr>
+                  <tr><td>ロゴ入りキャンディ</td><td>会計時配布、同梱、店舗ノベルティ</td><td>20円/粒〜</td><td>2週間〜1ヶ月</td></tr>
+                  <tr><td>イベント配布パック</td><td>展示会、受付、資料袋同梱</td><td>22円/粒〜</td><td>2週間〜1ヶ月</td></tr>
+                  <tr><td>記念ノベルティBOX</td><td>周年記念、地域企画、来賓向け</td><td>28円/粒〜</td><td>2週間〜1ヶ月</td></tr>
                 </tbody>
               </table>
             </div>
@@ -565,14 +597,14 @@
 
           <aside class="card estimate-card" id="estimate" aria-labelledby="estimate-title">
             <h3 id="estimate-title">概算見積もりシミュレーター</h3>
-            <p class="sub">粒数・商品タイプ・包装オプションを選ぶと、合計目安と営業相談用メール文面を更新します。</p>
+            <p class="sub">粒数・商品タイプ・包装オプションを選ぶと、合計目安と飴屋MUSASHIへの営業相談用メール文面を更新します。</p>
             <form id="estimateForm" class="form-grid">
               <div class="full">
                 <label for="productSelect">商品タイプ</label>
                 <select id="productSelect" name="product">
-                  <option value="logo" data-unit="20" data-lead="14〜21営業日">ロゴ入りキャンディ</option>
-                  <option value="event" data-unit="22" data-lead="14〜25営業日">イベント配布パック</option>
-                  <option value="box" data-unit="28" data-lead="21〜30営業日">記念ノベルティBOX</option>
+                  <option value="logo" data-unit="20" data-lead="2週間〜1ヶ月">ロゴ入りキャンディ</option>
+                  <option value="event" data-unit="22" data-lead="2週間〜1ヶ月">イベント配布パック</option>
+                  <option value="box" data-unit="28" data-lead="2週間〜1ヶ月">記念ノベルティBOX</option>
                 </select>
               </div>
               <div>
@@ -605,13 +637,13 @@
                 <div class="summary-row"><span>数量</span><strong id="sumQty">3,000粒</strong></div>
                 <div class="summary-row"><span>単価目安</span><strong id="sumUnit">¥20</strong></div>
                 <div class="summary-row"><span>包装</span><strong id="sumPackage">標準個包装</strong></div>
-                <div class="summary-row"><span>納期目安</span><strong id="sumLead">14〜21営業日</strong></div>
+                <div class="summary-row"><span>納期目安</span><strong id="sumLead">2週間〜1ヶ月</strong></div>
                 <div class="summary-row total"><span>概算合計</span><strong id="sumTotal">¥60,000</strong></div>
               </div>
               <div class="full">
                 <button type="submit" class="btn btn-copper" style="width:100%;">この内容で営業相談する</button>
                 <a id="salesMail" class="btn btn-line-dark" style="width:100%; margin-top:10px;" href="mailto:">メールリンクを開く</a>
-                <div class="notice">表示金額は税別の概算です。正式見積もりはロゴデータ、包装仕様、校正回数、納品先を確認後に確定します。</div>
+                <div class="notice">表示金額は税別の概算です。正式見積もりは希望デザイン、手作りでの再現可否、包装仕様、納品先を確認後に確定します。</div>
               </div>
             </form>
           </aside>
@@ -627,11 +659,11 @@
         <div>
           <span class="kicker">Production flow</span>
           <h2 id="process-title">相談から納品まで、法人購買で迷わない5ステップ。</h2>
-          <p class="sub">食品ノベルティは、見た目だけでなく納期・食品表示・配布方法の確認が重要です。初回相談で必要情報を整理し、営業先に説明しやすい進行にします。</p>
+          <p class="sub">食品ノベルティは、見た目だけでなく納期・食品表示・配布方法の確認が重要です。希望デザインを送り、職人の手作りで再現できる範囲を確認しながら進行します。</p>
           <div class="steps" aria-label="制作フロー">
             <div class="step"><div><h3>相談</h3><p>用途、数量、予算、希望納品日、配布場所を確認します。</p></div></div>
-            <div class="step"><div><h3>デザイン</h3><p>ロゴ・ブランドカラー・印刷範囲を確認し、仕上がりイメージを作成します。</p></div></div>
-            <div class="step"><div><h3>試作 / 確認</h3><p>味・包装・表示・入稿データを確認し、必要に応じて校正します。</p></div></div>
+            <div class="step"><div><h3>デザイン確認</h3><p>希望デザイン案や画像データを送り、飴での再現可否と最適な表現を確認します。</p></div></div>
+            <div class="step"><div><h3>仕様確定</h3><p>フレーバー、サイズ、個包装、数量、納期を確定します。</p></div></div>
             <div class="step"><div><h3>製造</h3><p>確定仕様に沿って製造し、個包装・検品・梱包を進めます。</p></div></div>
             <div class="step"><div><h3>納品</h3><p>イベント日や店舗展開日に合わせて納品。次回企画への展開も相談できます。</p></div></div>
           </div>
@@ -649,10 +681,10 @@
           </div>
         </div>
         <div class="faq-grid">
-          <details open><summary>最小ロットはいくつですか？</summary><p>基本仕様は3,000粒からです。概算見積もりは500粒単位で入力できます。</p></details>
-          <details><summary>参考単価はいくらですか？</summary><p>ロゴ入りキャンディは20円/粒〜、イベント配布パックは22円/粒〜、記念ノベルティBOXは28円/粒〜が目安です。包装オプションにより加算されます。</p></details>
+          <details open><summary>最小ロットはいくつですか？</summary><p>飴屋MUSASHI公式情報では、基本仕様は1注文につき3,000粒からです。概算見積もりは500粒単位で入力できます。</p></details>
+          <details><summary>参考単価はいくらですか？</summary><p>飴屋MUSASHI公式情報では1粒20円〜が参考価格です。LP上のイベント配布パック・BOXは包装や見せ方の違いを加味した営業用の概算です。</p></details>
           <details><summary>ロゴデータがまだ整っていなくても相談できますか？</summary><p>可能です。制作前に解像度、色、印刷範囲、可読性を確認します。必要に応じて再入稿や簡易調整の案内を行います。</p></details>
-          <details><summary>納期はどれくらいですか？</summary><p>目安はデザイン確定後14〜30営業日です。BOX仕様、大ロット、繁忙期は変動するため、イベント日が決まっている場合は早めの相談を推奨します。</p></details>
+          <details><summary>納期はどれくらいですか？</summary><p>公式情報では通常2週間〜1ヶ月です。時期や内容によって前後するため、イベント日が決まっている場合は早めの相談を推奨します。</p></details>
           <details><summary>食品表示や賞味期限はどうなりますか？</summary><p>実運用時は製造元の仕様に合わせて、原材料、賞味期限、保存方法などを確認します。配布用途に必要な表示情報を事前に整理します。</p></details>
           <details><summary>法人向けの書類対応はできますか？</summary><p>本LPは静的プロトタイプですが、実サービスでは見積書、請求書、領収書、納品先分割など法人購買に必要なフローを接続できます。</p></details>
         </div>
@@ -668,7 +700,7 @@
         </div>
         <div class="hero-actions">
           <a class="btn btn-copper" href="#estimate">概算見積もりを見る</a>
-          <a class="btn btn-line-dark" href="mailto:?subject=%E3%80%90AMEIRO%E3%80%91%E5%96%B6%E6%A5%AD%E7%9B%B8%E8%AB%87">営業相談する</a>
+          <a class="btn btn-line-dark" href="mailto:?subject=%E3%80%90%E9%A3%B4%E5%B1%8BMUSASHI%E3%80%91%E5%96%B6%E6%A5%AD%E7%9B%B8%E8%AB%87">営業相談する</a>
         </div>
       </div>
     </section>
@@ -676,8 +708,8 @@
 
   <footer class="footer">
     <div class="container footer-inner">
-      <strong style="color:var(--ink); letter-spacing:.1em;">AMEIRO</strong>
-      <span>© 2026 AMEIRO Custom Candy. Static LP Prototype.</span>
+      <strong style="color:var(--ink); letter-spacing:.1em;">飴屋MUSASHI</strong>
+      <span>© 2026 飴屋MUSASHI Custom Candy. Static LP Prototype.</span>
     </div>
   </footer>
 
@@ -750,7 +782,7 @@
 
     function updateSalesMail() {
       const estimate = getEstimate();
-      const subject = `【AMEIRO概算見積もり】${estimate.product} ${formatter.format(estimate.qty)}粒`;
+      const subject = `【飴屋MUSASHI概算見積もり】${estimate.product} ${formatter.format(estimate.qty)}粒`;
       const body = [
         '以下の内容で相談したいです。',
         '',
@@ -765,7 +797,7 @@
         '',
         `配布シーン・入れたい文字：${memo.value || '未入力'}`,
         '',
-        '※この金額はLP上の簡易見積もりです。正式金額はロゴデータ・包装仕様・納品先の確認後に確定します。'
+        '※この金額はLP上の簡易見積もりです。正式金額は希望デザイン・包装仕様・納品先の確認後に確定します。'
       ].join('\n');
       salesMail.href = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     }
