@@ -3,288 +3,250 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>武蔵飴 | 記憶に残る、オーダーメイド飴ノベルティ</title>
+  <title>武蔵飴 | オーダーメイド飴ノベルティ</title>
   <meta name="description" content="武蔵飴は、飲食店・式場・イベント・企業ノベルティ向けのオーダーメイド飴。2,500粒・75,000円目安から、ロゴ入り個包装飴を制作できます。" />
-  <meta property="og:title" content="武蔵飴 | 記憶に残る、オーダーメイド飴ノベルティ" />
-  <meta property="og:description" content="一粒で、ブランドの余韻を持ち帰ってもらう。飲食店・式場・イベント向けのロゴ入りオーダーメイド飴。" />
+  <meta property="og:title" content="武蔵飴 | オーダーメイド飴ノベルティ" />
+  <meta property="og:description" content="名刺でもチラシでもない、手元に残る小さなブランド体験。飲食店・式場・イベント向けのロゴ入りオーダーメイド飴。" />
   <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#090604" />
+  <meta name="theme-color" content="#0c0a08" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&family=Noto+Serif+JP:wght@500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --black: #090604;
-      --black-2: #130b07;
-      --sumi: #1d120b;
-      --brown: #3c2112;
-      --amber: #c97922;
-      --amber-2: #f3b85a;
-      --gold: #dfb766;
-      --cream: #fff2d6;
-      --paper: #f6ead6;
-      --muted: rgba(255, 242, 214, .68);
-      --muted-dark: rgba(29, 18, 11, .62);
-      --line: rgba(255, 242, 214, .16);
-      --line-dark: rgba(60, 33, 18, .14);
-      --shadow: 0 30px 100px rgba(0,0,0,.35);
+      --ink: #14100c;
+      --sumi: #0c0a08;
+      --paper: #f7f1e8;
+      --paper-2: #efe4d4;
+      --white: #fffaf2;
+      --muted: rgba(20, 16, 12, .62);
+      --muted-dark: rgba(255, 250, 242, .62);
+      --line: rgba(20, 16, 12, .13);
+      --line-dark: rgba(255, 250, 242, .14);
+      --accent: #a96c2c;
+      --accent-2: #d7a55d;
+      --blue: #1c69d4;
       --serif: 'Noto Serif JP', 'Yu Mincho', 'Hiragino Mincho ProN', serif;
-      --sans: 'Inter', system-ui, -apple-system, 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+      --sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+      --ease: cubic-bezier(.19, 1, .22, 1);
     }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; background: var(--black); }
+    html { scroll-behavior: smooth; background: var(--paper); }
     body {
       margin: 0;
       font-family: var(--sans);
-      color: var(--cream);
-      background:
-        radial-gradient(circle at 50% -10%, rgba(201, 121, 34, .28), transparent 34%),
-        radial-gradient(circle at 80% 20%, rgba(223, 183, 102, .13), transparent 28%),
-        linear-gradient(180deg, #090604 0%, #150d08 42%, #f6ead6 42.1%, #fff8ec 100%);
+      color: var(--ink);
+      background: var(--paper);
       line-height: 1.65;
       overflow-x: hidden;
-    }
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -2;
-      pointer-events: none;
-      background-image:
-        linear-gradient(rgba(255,242,214,.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,242,214,.035) 1px, transparent 1px);
-      background-size: 72px 72px;
-      mask-image: linear-gradient(180deg, #000 0%, rgba(0,0,0,.65) 50%, transparent 78%);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
     a { color: inherit; text-decoration: none; }
-    img, video { max-width: 100%; display: block; }
-    button, input, textarea, select { font: inherit; }
-    .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+    img, video { display: block; max-width: 100%; }
+    button, input, select, textarea { font: inherit; }
+    .container { width: min(1160px, calc(100% - 48px)); margin-inline: auto; }
 
     .nav {
       position: sticky;
       top: 0;
       z-index: 50;
-      border-bottom: 1px solid rgba(255,242,214,.12);
-      background: rgba(9, 6, 4, .74);
-      backdrop-filter: blur(22px) saturate(150%);
+      background: rgba(247, 241, 232, .78);
+      backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid rgba(20, 16, 12, .08);
     }
-    .nav-inner { height: 74px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .brand { display: flex; align-items: center; gap: 12px; min-width: max-content; }
-    .brand img { width: 46px; height: 46px; border-radius: 50%; background: #fff2d6; padding: 4px; box-shadow: 0 0 0 1px rgba(255,255,255,.2), 0 14px 34px rgba(201,121,34,.18); }
-    .brand strong { display: block; font-family: var(--serif); font-weight: 900; letter-spacing: .08em; line-height: 1; }
-    .brand small { display: block; color: var(--gold); font-size: 10px; letter-spacing: .28em; margin-top: 6px; }
-    .nav-links { display: flex; align-items: center; gap: 26px; color: rgba(255,242,214,.72); font-size: 13px; font-weight: 800; }
-    .nav-links a { transition: color .2s ease; }
-    .nav-links a:hover { color: #fff; }
+    .nav-inner { height: 68px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; width: max-content; }
+    .brand-mark { width: 38px; height: 38px; object-fit: contain; }
+    .brand strong { display: block; font-family: var(--serif); font-size: 17px; font-weight: 700; letter-spacing: .08em; line-height: 1; }
+    .brand small { display: block; margin-top: 5px; color: rgba(20,16,12,.48); font-size: 9px; font-weight: 700; letter-spacing: .26em; }
+    .nav-links { display: flex; justify-content: center; gap: 30px; color: rgba(20,16,12,.62); font-size: 12px; font-weight: 700; letter-spacing: .06em; }
+    .nav-links a { transition: color .2s var(--ease); }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-cta { justify-self: end; }
+
     .btn {
+      min-height: 46px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 9px;
-      min-height: 48px;
-      padding: 13px 20px;
       border: 1px solid transparent;
-      border-radius: 999px;
-      font-weight: 900;
-      letter-spacing: -.02em;
+      border-radius: 0;
+      padding: 12px 18px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: .01em;
       cursor: pointer;
-      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+      transition: transform .22s var(--ease), background .22s var(--ease), border-color .22s var(--ease), color .22s var(--ease);
       white-space: nowrap;
     }
-    .btn:hover { transform: translateY(-2px); }
-    .btn-primary { color: #160b05; background: linear-gradient(135deg, #ffe1a0, #c97922 58%, #f5c96b); box-shadow: 0 18px 52px rgba(201,121,34,.28); }
-    .btn-dark { color: #fff2d6; background: rgba(255,242,214,.08); border-color: rgba(255,242,214,.18); }
-    .btn-light { color: var(--sumi); background: #fff8ec; border-color: rgba(60,33,18,.12); box-shadow: 0 18px 46px rgba(60,33,18,.12); }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--sumi); color: var(--white); border-color: var(--sumi); }
+    .btn-primary:hover { background: #2a221b; border-color: #2a221b; }
+    .btn-ghost { background: transparent; color: var(--ink); border-color: rgba(20,16,12,.22); }
+    .btn-ghost:hover { border-color: var(--ink); }
+    .btn-light { background: var(--white); color: var(--ink); border-color: rgba(255,250,242,.7); }
 
-    .hero { position: relative; min-height: calc(100svh - 74px); display: grid; align-items: center; padding: 86px 0 70px; overflow: hidden; }
-    .hero::after {
-      content: "武蔵飴";
-      position: absolute;
-      right: -4vw;
-      top: 9vh;
+    .hero { min-height: calc(100svh - 68px); display: grid; align-items: center; padding: 72px 0; background: var(--paper); }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, .86fr) minmax(420px, 1.14fr); gap: clamp(36px, 6vw, 86px); align-items: center; }
+    .kicker { display: inline-block; color: rgba(20,16,12,.52); font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+    h1, h2, h3, p { text-wrap: pretty; }
+    h1 {
+      margin: 18px 0 22px;
       font-family: var(--serif);
-      font-size: clamp(120px, 22vw, 330px);
-      font-weight: 900;
-      writing-mode: vertical-rl;
-      color: rgba(255,242,214,.045);
-      letter-spacing: -.08em;
-      z-index: 0;
+      font-size: clamp(44px, 7vw, 96px);
+      font-weight: 600;
+      line-height: 1.05;
+      letter-spacing: -.055em;
     }
-    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.04fr .96fr; align-items: center; gap: 52px; }
-    .kicker { display: inline-flex; align-items: center; gap: 10px; border: 1px solid rgba(255,242,214,.18); background: rgba(255,242,214,.06); border-radius: 999px; padding: 9px 13px; color: rgba(255,242,214,.78); font-size: 12px; font-weight: 900; letter-spacing: .08em; }
-    .kicker::before { content:""; width: 8px; height: 8px; border-radius: 50%; background: var(--amber-2); box-shadow: 0 0 20px var(--amber-2); }
-    h1 { margin: 24px 0 20px; font-family: var(--serif); font-weight: 900; font-size: clamp(48px, 6.8vw, 94px); line-height: .96; letter-spacing: -.075em; text-wrap: balance; }
-    .hero h1 span { color: var(--amber-2); text-shadow: 0 0 34px rgba(243,184,90,.18); }
-    .lead { margin: 0; color: var(--muted); font-size: clamp(16px, 1.55vw, 19px); max-width: 660px; }
-    .hero-actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-top: 30px; }
-    .proof-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 36px; max-width: 620px; }
-    .proof { border-top: 1px solid rgba(255,242,214,.18); padding-top: 13px; }
-    .proof strong { display: block; color: #fff; font-size: 22px; line-height: 1.1; letter-spacing: -.04em; }
-    .proof span { display: block; color: rgba(255,242,214,.56); font-size: 12px; font-weight: 800; margin-top: 5px; }
+    .lead { max-width: 640px; margin: 0; color: var(--muted); font-size: clamp(16px, 1.55vw, 19px); line-height: 1.86; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+    .hero-meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 42px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .meta { padding: 18px 18px 18px 0; }
+    .meta + .meta { border-left: 1px solid var(--line); padding-left: 18px; }
+    .meta strong { display: block; font-size: clamp(22px, 2.4vw, 31px); line-height: 1; letter-spacing: -.04em; }
+    .meta span { display: block; margin-top: 8px; color: rgba(20,16,12,.52); font-size: 12px; font-weight: 600; }
 
-    .hero-stage { position: relative; min-height: 680px; }
-    .stage-frame {
+    .hero-visual { position: relative; }
+    .photo-frame { position: relative; height: min(72svh, 720px); min-height: 560px; background: #17120e; overflow: hidden; }
+    .photo-frame img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.92) contrast(1.02); }
+    .photo-frame::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,10,8,.02), rgba(12,10,8,.30)); pointer-events: none; }
+    .visual-caption {
       position: absolute;
-      inset: 0 0 80px 8%;
-      border: 1px solid rgba(255,242,214,.18);
-      background:
-        linear-gradient(180deg, rgba(255,242,214,.12), rgba(255,242,214,.03)),
-        radial-gradient(circle at 50% 20%, rgba(243,184,90,.24), transparent 38%),
-        #100a06;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      border-radius: 0;
-    }
-    .stage-frame::before {
-      content:"";
-      position:absolute;
-      inset: 26px;
-      border: 1px solid rgba(255,242,214,.13);
-      pointer-events: none;
-      z-index: 2;
-    }
-    .hero-product { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .72; filter: saturate(.98) contrast(1.05); }
-    .stage-logo {
-      position: absolute;
-      left: 50%;
-      top: 52px;
-      transform: translateX(-50%);
-      width: min(46%, 300px);
-      background: rgba(255,242,214,.92);
-      border-radius: 50%;
-      padding: 18px;
-      box-shadow: 0 28px 80px rgba(0,0,0,.38);
-      z-index: 3;
-    }
-    .price-plate {
-      position: absolute;
-      left: 0;
-      bottom: 16px;
-      width: min(390px, 74%);
+      left: -34px;
+      bottom: 42px;
+      width: min(380px, 70%);
+      background: rgba(255, 250, 242, .92);
+      border: 1px solid rgba(20,16,12,.10);
       padding: 24px;
-      background: rgba(9,6,4,.88);
-      border: 1px solid rgba(255,242,214,.18);
-      backdrop-filter: blur(16px);
-      box-shadow: 0 24px 70px rgba(0,0,0,.38);
-      z-index: 5;
+      backdrop-filter: blur(12px);
     }
-    .price-plate small { color: var(--gold); font-weight: 900; letter-spacing: .12em; }
-    .price-plate strong { display:block; font-size: clamp(31px, 4.2vw, 52px); line-height: .98; letter-spacing: -.075em; margin-top: 8px; }
-    .price-plate p { margin: 12px 0 0; color: rgba(255,242,214,.58); font-size: 13px; font-weight: 700; }
-    .vertical-label { position: absolute; right: 18px; bottom: 104px; z-index: 4; writing-mode: vertical-rl; color: rgba(255,242,214,.64); letter-spacing: .38em; font-size: 12px; font-weight: 900; }
-
-    .dark-section { background: linear-gradient(180deg, #150d08, #090604); color: var(--cream); padding: 96px 0; position: relative; }
-    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 34px; }
-    .eyebrow { color: var(--amber-2); font-size: 12px; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
-    h2 { margin: 8px 0 0; font-family: var(--serif); font-size: clamp(34px, 5vw, 66px); line-height: 1.03; letter-spacing: -.065em; }
-    .section-copy { color: var(--muted); max-width: 620px; margin: 0; }
-    .problem-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 18px; }
-    .big-card, .mini-card, .light-card {
-      border: 1px solid rgba(255,242,214,.14);
-      background: rgba(255,242,214,.055);
-      box-shadow: 0 24px 80px rgba(0,0,0,.18);
+    .visual-caption small { display: block; color: var(--accent); font-size: 11px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+    .visual-caption strong { display: block; margin-top: 8px; font-size: 30px; line-height: 1.08; letter-spacing: -.055em; }
+    .vertical-word {
+      position: absolute;
+      right: -26px;
+      top: 36px;
+      writing-mode: vertical-rl;
+      color: rgba(20,16,12,.36);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .38em;
+      text-transform: uppercase;
     }
-    .big-card { min-height: 470px; padding: 36px; display: grid; align-content: end; position: relative; overflow: hidden; }
-    .big-card video, .big-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .52; }
-    .big-card::after { content:""; position:absolute; inset:0; background: linear-gradient(180deg, transparent 20%, rgba(9,6,4,.92) 86%); }
-    .big-card > div { position: relative; z-index: 1; }
-    .big-card h3 { margin: 0 0 10px; font-family: var(--serif); font-size: clamp(30px, 4vw, 52px); line-height: 1.05; letter-spacing: -.06em; }
-    .big-card p { margin: 0; color: rgba(255,242,214,.68); }
-    .mini-stack { display: grid; gap: 18px; }
-    .mini-card { padding: 26px; min-height: 144px; }
-    .mini-card span { color: var(--amber-2); font-family: var(--serif); font-size: 34px; line-height: 1; }
-    .mini-card h3 { margin: 12px 0 6px; font-size: 22px; letter-spacing: -.04em; }
-    .mini-card p { margin: 0; color: rgba(255,242,214,.62); font-size: 14px; }
 
-    .light { color: var(--sumi); background: linear-gradient(180deg, #f6ead6, #fff8ec); padding: 104px 0; }
-    .light .eyebrow { color: #9b591f; }
-    .light .section-copy { color: var(--muted-dark); }
-    .use-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .use-card { background: #fffdf7; border: 1px solid var(--line-dark); box-shadow: 0 20px 60px rgba(60,33,18,.11); overflow: hidden; }
-    .use-card figure { margin: 0; height: 245px; overflow: hidden; background: #e9d2ae; }
-    .use-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .45s ease; }
-    .use-card:hover img { transform: scale(1.05); }
-    .use-body { padding: 24px; }
-    .use-body small { color: #9b591f; font-weight: 900; letter-spacing: .14em; }
-    .use-body h3 { margin: 10px 0 8px; font-size: 24px; line-height: 1.18; letter-spacing: -.05em; }
-    .use-body p { margin: 0; color: var(--muted-dark); font-size: 14px; }
+    .section { padding: clamp(84px, 10vw, 142px) 0; }
+    .section.dark { background: var(--sumi); color: var(--white); }
+    .section-head { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(28px, 6vw, 80px); align-items: end; margin-bottom: 42px; }
+    .eyebrow { color: var(--accent); font-size: 11px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+    .dark .eyebrow { color: var(--accent-2); }
+    h2 { margin: 10px 0 0; font-family: var(--serif); font-size: clamp(32px, 5vw, 66px); font-weight: 600; line-height: 1.12; letter-spacing: -.05em; }
+    .section-copy { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.9; }
+    .dark .section-copy { color: var(--muted-dark); }
 
-    .offer-band { margin-top: 42px; padding: 40px; background: #130b07; color: var(--cream); display: grid; grid-template-columns: 1.05fr .95fr; gap: 28px; align-items: center; box-shadow: 0 30px 90px rgba(60,33,18,.23); position: relative; overflow: hidden; }
-    .offer-band::before { content:""; position:absolute; inset:-1px; border:1px solid rgba(255,242,214,.18); pointer-events:none; }
-    .offer-band h3 { margin:0; font-family: var(--serif); font-size: clamp(32px, 5vw, 58px); line-height: 1.04; letter-spacing: -.065em; }
-    .spec-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
-    .spec { border-top: 1px solid rgba(255,242,214,.18); padding-top: 14px; }
-    .spec span { display:block; color: rgba(255,242,214,.55); font-size: 12px; font-weight: 900; }
-    .spec strong { display:block; margin-top: 6px; color:#fff; font-size: 25px; line-height: 1.1; letter-spacing: -.04em; }
+    .story-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 1px; background: var(--line-dark); border: 1px solid var(--line-dark); }
+    .story-media { min-height: 520px; background: #19140f; overflow: hidden; }
+    .story-media video, .story-media img { width: 100%; height: 100%; object-fit: cover; opacity: .84; }
+    .story-panel { background: #17120e; padding: clamp(28px, 4vw, 48px); display: grid; align-content: center; gap: 28px; }
+    .story-item { border-top: 1px solid var(--line-dark); padding-top: 22px; }
+    .story-item:first-child { border-top: 0; padding-top: 0; }
+    .story-item span { color: var(--accent-2); font-size: 12px; font-weight: 800; letter-spacing: .12em; }
+    .story-item h3 { margin: 10px 0 7px; font-size: 24px; line-height: 1.25; letter-spacing: -.035em; }
+    .story-item p { margin: 0; color: var(--muted-dark); font-size: 14px; }
 
-    .process { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 34px; }
-    .step { background: #fffdf7; border: 1px solid var(--line-dark); padding: 24px; min-height: 216px; display: flex; flex-direction: column; justify-content: space-between; }
-    .step-num { font-family: var(--serif); color: #bf7629; font-size: 42px; line-height: 1; }
-    .step h3 { margin: 22px 0 8px; font-size: 20px; letter-spacing: -.045em; }
-    .step p { margin: 0; color: var(--muted-dark); font-size: 14px; }
+    .use-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+    .use-card { background: var(--white); min-width: 0; }
+    .use-card figure { margin: 0; height: 300px; overflow: hidden; background: #d8c5ad; }
+    .use-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s var(--ease); }
+    .use-card:hover img { transform: scale(1.035); }
+    .use-body { padding: 26px; }
+    .use-body small { color: var(--accent); font-size: 11px; font-weight: 800; letter-spacing: .15em; }
+    .use-body h3 { margin: 12px 0 8px; font-size: 25px; line-height: 1.22; letter-spacing: -.04em; }
+    .use-body p { margin: 0; color: var(--muted); font-size: 14px; }
 
-    .contact-shell { display: grid; grid-template-columns: .9fr 1.1fr; gap: 22px; align-items: start; }
-    .contact-panel { background: #fffdf7; border: 1px solid var(--line-dark); box-shadow: 0 24px 80px rgba(60,33,18,.12); padding: 30px; }
-    .contact-panel.dark { background: #130b07; color: var(--cream); border-color: rgba(255,242,214,.16); position: sticky; top: 100px; overflow: hidden; }
-    .contact-panel.dark::after { content:""; position:absolute; right:-60px; bottom:-70px; width: 250px; height: 250px; background: url('assets/musashi-logo.svg') center/contain no-repeat; opacity:.08; }
-    .contact-panel h3 { margin: 0 0 12px; font-family: var(--serif); font-size: 34px; line-height: 1.1; letter-spacing: -.055em; }
-    .contact-panel p { color: var(--muted-dark); margin: 0; }
-    .contact-panel.dark p { color: rgba(255,242,214,.62); }
-    .quote { display: grid; gap: 12px; margin-top: 22px; }
-    .quote-line { display:flex; justify-content:space-between; gap: 18px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,242,214,.14); color: rgba(255,242,214,.62); }
-    .quote-line strong { color: #fff; }
-    .quote-total { margin-top: 20px; }
-    .quote-total small { display:block; color: var(--gold); font-weight:900; }
-    .quote-total strong { display:block; font-size: 44px; line-height:1; letter-spacing:-.07em; margin-top: 6px; }
-    form { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; }
+    .offer { background: var(--sumi); color: var(--white); }
+    .offer-grid { display: grid; grid-template-columns: .96fr 1.04fr; gap: clamp(34px, 6vw, 78px); align-items: center; }
+    .price-card { border: 1px solid var(--line-dark); background: #18130f; padding: clamp(28px, 4vw, 46px); }
+    .price-card small { color: var(--accent-2); font-size: 11px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+    .price-card strong { display: block; margin-top: 12px; font-size: clamp(48px, 7vw, 92px); line-height: .98; letter-spacing: -.07em; }
+    .price-card p { margin: 18px 0 0; color: var(--muted-dark); }
+    .spec-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line-dark); border: 1px solid var(--line-dark); }
+    .spec { background: #120e0b; padding: 24px; }
+    .spec span { display: block; color: rgba(255,250,242,.48); font-size: 12px; font-weight: 700; }
+    .spec strong { display: block; margin-top: 8px; color: var(--white); font-size: 22px; line-height: 1.18; letter-spacing: -.035em; }
+
+    .flow-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+    .step { background: var(--white); padding: 26px; min-height: 228px; display: flex; flex-direction: column; justify-content: space-between; }
+    .step-num { color: var(--accent); font-family: var(--serif); font-size: 34px; line-height: 1; }
+    .step h3 { margin: 28px 0 8px; font-size: 20px; letter-spacing: -.035em; }
+    .step p { margin: 0; color: var(--muted); font-size: 14px; }
+
+    .contact { padding-top: 0; }
+    .contact-shell { display: grid; grid-template-columns: .9fr 1.1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+    .contact-side, .contact-form { background: var(--white); padding: clamp(26px, 4vw, 44px); }
+    .contact-side { background: #17120e; color: var(--white); }
+    .contact-side p { color: var(--muted-dark); margin: 14px 0 0; }
+    .quote { margin-top: 28px; border-top: 1px solid var(--line-dark); }
+    .quote-row { display: flex; justify-content: space-between; gap: 18px; padding: 16px 0; border-bottom: 1px solid var(--line-dark); color: rgba(255,250,242,.58); }
+    .quote-row strong { color: var(--white); }
+    form { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
     .field.full { grid-column: 1 / -1; }
-    label { display: block; margin-bottom: 7px; color: rgba(29,18,11,.58); font-size: 12px; font-weight: 900; }
-    input, select, textarea { width:100%; border:1px solid rgba(60,33,18,.14); background:#fffaf0; color:var(--sumi); border-radius: 0; padding: 14px 15px; outline:none; }
+    label { display: block; margin-bottom: 7px; color: rgba(20,16,12,.58); font-size: 12px; font-weight: 800; }
+    input, select, textarea { width: 100%; border: 1px solid rgba(20,16,12,.16); background: #fffaf2; color: var(--ink); border-radius: 0; padding: 14px 15px; outline: none; }
     textarea { min-height: 118px; resize: vertical; }
-    input:focus, select:focus, textarea:focus { border-color: rgba(201,121,34,.68); box-shadow: 0 0 0 4px rgba(201,121,34,.12); }
-    .form-note { grid-column: 1 / -1; color: var(--muted-dark); font-size: 12px; margin: -2px 0 0; }
+    input:focus, select:focus, textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(28,105,212,.14); }
+    .form-note { grid-column: 1 / -1; margin: 0; color: var(--muted); font-size: 12px; }
+    .contact-form .btn { width: 100%; }
 
-    .faq-list { display: grid; gap: 10px; margin-top: 30px; }
-    details { background: rgba(255,253,247,.86); border: 1px solid var(--line-dark); padding: 20px 22px; }
-    summary { cursor: pointer; font-weight: 900; color: var(--sumi); }
-    details p { color: var(--muted-dark); margin: 12px 0 0; }
+    .faq-list { display: grid; gap: 1px; margin-top: 32px; background: var(--line); border: 1px solid var(--line); }
+    details { background: var(--white); padding: 20px 22px; }
+    summary { cursor: pointer; font-weight: 800; }
+    details p { color: var(--muted); margin: 12px 0 0; }
 
-    .final-cta { padding: 92px 0; background: #090604; color: var(--cream); text-align: center; position: relative; overflow: hidden; }
-    .final-cta::before { content:""; position:absolute; inset:0; background: radial-gradient(circle at 50% 20%, rgba(201,121,34,.25), transparent 35%); }
-    .final-cta .container { position: relative; z-index: 1; }
-    .final-cta h2 { max-width: 900px; margin: 8px auto 18px; }
-    .final-cta p { color: var(--muted); max-width: 680px; margin: 0 auto 30px; }
-    footer { padding: 34px 0; color: rgba(255,242,214,.52); background: #090604; border-top: 1px solid rgba(255,242,214,.1); font-size: 12px; }
-    .footer-inner { display:flex; justify-content:space-between; align-items:center; gap:18px; flex-wrap:wrap; }
-    .toast { position: fixed; right: 22px; bottom: 22px; z-index: 80; transform: translateY(130px); opacity: 0; transition: .25s ease; background: #130b07; color: #fff; border:1px solid rgba(255,242,214,.16); padding: 16px 18px; box-shadow: var(--shadow); font-weight: 900; }
+    .final-cta { padding: clamp(86px, 10vw, 138px) 0; background: var(--sumi); color: var(--white); text-align: center; }
+    .final-cta h2 { max-width: 860px; margin-inline: auto; }
+    .final-cta p { max-width: 660px; margin: 20px auto 32px; color: var(--muted-dark); }
+    footer { background: var(--sumi); color: rgba(255,250,242,.45); border-top: 1px solid var(--line-dark); padding: 30px 0; font-size: 12px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+    .toast { position: fixed; right: 22px; bottom: 22px; z-index: 90; transform: translateY(120px); opacity: 0; background: var(--sumi); color: var(--white); border: 1px solid var(--line-dark); padding: 14px 16px; transition: .24s var(--ease); font-weight: 700; }
     .toast.show { transform: translateY(0); opacity: 1; }
 
-    @media (max-width: 980px) {
-      .nav-links { display:none; }
-      .hero-grid, .problem-grid, .offer-band, .contact-shell { grid-template-columns: 1fr; }
-      .hero-stage { min-height: 590px; }
-      .stage-frame { inset: 0 0 80px 0; }
-      .use-grid, .process { grid-template-columns: 1fr 1fr; }
-      .section-head { display:block; }
-      .contact-panel.dark { position: relative; top: auto; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+      video[autoplay] { display: none; }
     }
-    @media (max-width: 620px) {
-      .container { width: min(100% - 24px, 1180px); }
-      .nav-inner { height: 66px; }
-      .brand img { width: 40px; height: 40px; }
-      .brand small { display:none; }
-      .nav .btn { display: none; }
-      .hero { padding: 50px 0 50px; min-height: auto; }
+    @media (max-width: 980px) {
+      .nav-inner { grid-template-columns: 1fr auto; }
+      .nav-links { display: none; }
+      .hero-grid, .section-head, .story-grid, .offer-grid, .contact-shell { grid-template-columns: 1fr; }
+      .hero { padding-top: 48px; }
+      .photo-frame { height: 620px; min-height: 460px; }
+      .visual-caption { left: 24px; bottom: 24px; width: min(380px, calc(100% - 48px)); }
+      .vertical-word { right: 18px; color: rgba(255,250,242,.62); }
+      .use-grid { grid-template-columns: 1fr; }
+      .flow-grid, .spec-list { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .container { width: min(100% - 28px, 1160px); }
+      .nav-inner { height: 62px; }
+      .brand small { display: none; }
+      .nav-cta { display: none; }
+      .hero { min-height: auto; padding: 42px 0 64px; }
+      h1 { font-size: clamp(37px, 11vw, 48px); line-height: 1.12; letter-spacing: -.06em; }
       .hero-actions { display: grid; grid-template-columns: 1fr; }
       .hero-actions .btn { width: 100%; white-space: normal; text-align: center; }
-      .proof-row, .use-grid, .process, .spec-grid, form { grid-template-columns: 1fr; }
-      .hero-stage { min-height: 520px; }
-      .stage-logo { width: 230px; }
-      .price-plate { width: calc(100% - 24px); left: 12px; padding: 20px; }
-      .vertical-label { display:none; }
-      .big-card { min-height: 380px; padding: 24px; }
-      .offer-band, .contact-panel { padding: 24px; }
+      .hero-meta { grid-template-columns: 1fr; }
+      .meta, .meta + .meta { padding: 16px 0; border-left: 0; }
+      .meta + .meta { border-top: 1px solid var(--line); }
+      .photo-frame { min-height: 430px; height: 520px; }
+      .visual-caption { position: relative; left: auto; bottom: auto; width: 100%; margin-top: 10px; }
+      .vertical-word { display: none; }
+      .section { padding: 72px 0; }
+      .story-media { min-height: 360px; }
+      .flow-grid, .spec-list, form { grid-template-columns: 1fr; }
+      .use-card figure { height: 240px; }
     }
   </style>
   <script type="application/ld+json">
@@ -295,16 +257,16 @@
   <nav class="nav" aria-label="グローバルナビゲーション">
     <div class="container nav-inner">
       <a class="brand" href="#top" aria-label="武蔵飴 トップへ">
-        <img src="assets/musashi-logo.svg" alt="武蔵飴 ロゴ">
+        <img class="brand-mark" src="assets/musashi-logo.svg" alt="武蔵飴 ロゴ">
         <span><strong>武蔵飴</strong><small>MUSASHI AME</small></span>
       </a>
       <div class="nav-links">
         <a href="#concept">価値</a>
         <a href="#usecase">用途</a>
-        <a href="#flow">流れ</a>
+        <a href="#offer">条件</a>
         <a href="#contact">相談</a>
       </div>
-      <a class="btn btn-primary" href="#contact">無料相談</a>
+      <a class="btn btn-primary nav-cta" href="#contact">相談する</a>
     </div>
   </nav>
 
@@ -312,148 +274,148 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <span class="kicker">BTOB ORDERMADE CANDY / 2,500 PCS</span>
-          <h1>配った瞬間、<br><span>ブランドに<br>なる。</span></h1>
-          <p class="lead">武蔵飴は、ロゴ・色・世界観を一粒に落とし込むオーダーメイド飴。飲食店、式場、イベント、企業ノベルティで「渡して終わり」ではなく、再来店・商談・紹介のきっかけを作ります。</p>
+          <span class="kicker">BtoB custom candy / 2,500 pieces</span>
+          <h1>渡したあとに、<br>残るものを<br>作る。</h1>
+          <p class="lead">武蔵飴は、ロゴ・色・包装を一粒に落とし込むオーダーメイド飴です。会計時、受付、展示会、引き出物。渡す場面から逆算して、ブランドの余韻を設計します。</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">2,500粒の概算を相談する</a>
-            <a class="btn btn-dark" href="#usecase">活用シーンを見る</a>
+            <a class="btn btn-primary" href="#contact">配布シーンを相談する</a>
+            <a class="btn btn-ghost" href="#usecase">活用例を見る</a>
           </div>
-          <div class="proof-row" aria-label="基本情報">
-            <div class="proof"><strong>¥75,000</strong><span>2,500粒の基本目安</span></div>
-            <div class="proof"><strong>30円/粒</strong><span>配りやすい単価感</span></div>
-            <div class="proof"><strong>個包装</strong><span>ロゴ・色味相談可</span></div>
+          <div class="hero-meta" aria-label="基本条件">
+            <div class="meta"><strong>2,500粒〜</strong><span>基本ロット</span></div>
+            <div class="meta"><strong>¥75,000</strong><span>参考価格</span></div>
+            <div class="meta"><strong>個包装</strong><span>ロゴ・色味相談可</span></div>
           </div>
         </div>
-        <aside class="hero-stage" aria-label="武蔵飴のプレミアム商品イメージ">
-          <div class="stage-frame">
-            <img class="hero-product" src="assets/premium-hero-candy.png" alt="高級感のあるオーダーメイド飴のイメージ">
-            <img class="stage-logo" src="assets/musashi-logo.svg" alt="武蔵飴の家紋風ロゴ">
+        <aside class="hero-visual" aria-label="武蔵飴の製品イメージ">
+          <div class="photo-frame">
+            <img src="assets/premium-hero-candy.png" alt="オーダーメイド飴の高級感あるイメージ">
           </div>
-          <div class="vertical-label">JAPANESE CRAFT NOVELTY</div>
-          <div class="price-plate">
-            <small>STANDARD PLAN</small>
-            <strong>2,500粒<br>¥75,000目安</strong>
-            <p>飲食店・式場・イベント・企業ノベルティ向け。仕様により変動します。</p>
+          <div class="vertical-word">JAPANESE CRAFT NOVELTY</div>
+          <div class="visual-caption">
+            <small>standard plan</small>
+            <strong>1粒30円目安。<br>小さく試せる法人ノベルティ。</strong>
           </div>
         </aside>
       </div>
     </section>
 
-    <section id="concept" class="dark-section">
+    <section id="concept" class="section dark">
       <div class="container">
         <div class="section-head">
           <div>
-            <span class="eyebrow">WHY CANDY</span>
-            <h2>チラシより軽く、<br>名刺より残る。</h2>
+            <span class="eyebrow">Concept</span>
+            <h2>高級感は、<br>説明の量ではなく<br>余白で伝わる。</h2>
           </div>
-          <p class="section-copy">小さく、渡しやすく、捨てられにくい。飴は、会計・受付・名刺交換・引き出物・イベント配布のどこにも自然に入り込める販促接点です。</p>
+          <p class="section-copy">ネットで調べたラグジュアリーLPの原則に合わせ、余計な装飾を削ぎ、写真・余白・短いコピーで見せる構成にしています。飴を“販促物”ではなく、受け取る体験として見せます。</p>
         </div>
-        <div class="problem-grid">
-          <article class="big-card">
+        <div class="story-grid">
+          <div class="story-media">
             <video src="assets/videos/candy-craft-process.mp4" poster="assets/process-craft.png" autoplay muted loop playsinline></video>
-            <div>
-              <h3>商品ではなく、<br>余韻を設計する。</h3>
-              <p>ロゴ入り飴は、単なるノベルティではありません。手元に残る数秒の体験が「このお店、ちゃんとしている」という印象を作ります。</p>
-            </div>
-          </article>
-          <div class="mini-stack">
-            <article class="mini-card"><span>01</span><h3>自然に渡せる</h3><p>会計時、受付、商談後、ギフト同梱など、営業色を出さずに配布できます。</p></article>
-            <article class="mini-card"><span>02</span><h3>会話になる</h3><p>「これ作れるんですか？」から、店舗・企業のこだわりを伝える導線になります。</p></article>
-            <article class="mini-card"><span>03</span><h3>世界観を揃えられる</h3><p>ロゴ、色、パッケージの雰囲気をブランドに合わせて設計できます。</p></article>
+          </div>
+          <div class="story-panel">
+            <article class="story-item"><span>01</span><h3>配る場面に自然に入る</h3><p>会計、受付、商談後、ギフト同梱。営業色を出さずに、ブランド接点を作れます。</p></article>
+            <article class="story-item"><span>02</span><h3>会話のきっかけになる</h3><p>「これ作れるんですか？」という小さな驚きから、お店や企業のこだわりを伝えられます。</p></article>
+            <article class="story-item"><span>03</span><h3>記憶に残る単価感</h3><p>1粒30円目安。名刺やチラシとは違う、手元に残る体験を無理のない単価で試せます。</p></article>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="usecase" class="light">
+    <section id="usecase" class="section">
       <div class="container">
         <div class="section-head">
           <div>
-            <span class="eyebrow">USE CASE</span>
-            <h2>最初は、反応が出やすい<br>3つの業種に絞る。</h2>
+            <span class="eyebrow">Use case</span>
+            <h2>売り先は、<br>配布シーンがある場所。</h2>
           </div>
-          <p class="section-copy">BtoB営業では広げすぎないことが重要です。まずは、配布シーンが明確で、写真映えし、継続発注の可能性がある領域から提案します。</p>
+          <p class="section-copy">最初から広げすぎず、継続発注や紹介につながりやすい3領域に絞って提案します。BtoB営業では、誰に何を渡すかが明確な先ほど反応が出やすいです。</p>
         </div>
         <div class="use-grid">
           <article class="use-card">
             <figure><img src="assets/hero-b2b-restaurant.png" alt="飲食店でのロゴ入り飴活用イメージ"></figure>
-            <div class="use-body"><small>RESTAURANT</small><h3>飲食店・バー</h3><p>会計時や周年イベントで。小さな手土産が再来店と口コミのきっかけになります。</p></div>
+            <div class="use-body"><small>Restaurant / Bar</small><h3>飲食店・バー</h3><p>会計時、周年イベント、常連向けの小さな手土産に。再来店と口コミのきっかけを作ります。</p></div>
           </article>
           <article class="use-card">
-            <figure><img src="assets/gift-box-premium.png" alt="式場・ホテル向けギフトボックスのイメージ"></figure>
-            <div class="use-body"><small>WEDDING / HOTEL</small><h3>式場・ホテル</h3><p>引き出物、フェア来場特典、宿泊者向けギフトとして、上質な印象を残せます。</p></div>
+            <figure><img src="assets/gift-box-premium.png" alt="式場やホテルのギフトイメージ"></figure>
+            <div class="use-body"><small>Wedding / Hotel</small><h3>式場・ホテル</h3><p>フェア来場特典、引き出物、宿泊者向けギフトとして、上質な印象を残せます。</p></div>
           </article>
           <article class="use-card">
             <figure><img src="assets/event-handoff.png" alt="イベントでノベルティを手渡すイメージ"></figure>
-            <div class="use-body"><small>EVENT / COMPANY</small><h3>イベント・法人</h3><p>展示会、採用イベント、周年記念、商談後のノベルティに。名刺より柔らかい接点です。</p></div>
+            <div class="use-body"><small>Event / Company</small><h3>イベント・法人</h3><p>展示会、採用イベント、商談後のノベルティに。名刺より柔らかい接点です。</p></div>
           </article>
         </div>
+      </div>
+    </section>
 
-        <div class="offer-band">
-          <div>
-            <span class="eyebrow">OFFER</span>
-            <h3>まずは2,500粒から。<br>小さく試して、反応を見る。</h3>
-          </div>
-          <div class="spec-grid">
+    <section id="offer" class="section offer">
+      <div class="container offer-grid">
+        <div>
+          <span class="eyebrow">Offer</span>
+          <h2>まずは、<br>2,500粒から。</h2>
+          <p class="section-copy">初回提案では、用途・数量・ロゴデータの有無だけ分かれば十分です。仕様は、配布日と見せ方に合わせて現実的に詰めます。</p>
+        </div>
+        <div class="price-card">
+          <small>standard estimate</small>
+          <strong>¥75,000</strong>
+          <p>2,500粒・1粒30円目安。原価や仕様により変動するため、正式価格は確認後に確定します。</p>
+          <div class="spec-list" style="margin-top:28px;">
             <div class="spec"><span>基本ロット</span><strong>2,500粒〜</strong></div>
-            <div class="spec"><span>参考価格</span><strong>¥75,000目安</strong></div>
-            <div class="spec"><span>単価目安</span><strong>1粒30円</strong></div>
+            <div class="spec"><span>単価目安</span><strong>30円/粒</strong></div>
             <div class="spec"><span>仕様</span><strong>個包装・ロゴ相談</strong></div>
+            <div class="spec"><span>対象</span><strong>飲食店・式場・法人</strong></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="flow" class="light" style="padding-top:0;">
+    <section id="flow" class="section">
       <div class="container">
         <div class="section-head">
           <div>
-            <span class="eyebrow">FLOW</span>
-            <h2>発注までを、<br>迷わない流れに。</h2>
+            <span class="eyebrow">Flow</span>
+            <h2>発注までを、<br>迷わせない。</h2>
           </div>
-          <p class="section-copy">最初の相談では、用途・配布数・ロゴデータの有無だけ分かれば十分です。細かい仕様は、サンプル方向を見ながら詰めていきます。</p>
+          <p class="section-copy">高級感だけでは受注になりません。最初の相談で聞く内容を絞り、相手の負担を減らす導線にしています。</p>
         </div>
-        <div class="process">
-          <article class="step"><div><div class="step-num">01</div><h3>用途を確認</h3><p>誰に、どの場面で、何粒配るかを整理します。</p></div></article>
-          <article class="step"><div><div class="step-num">02</div><h3>ロゴ・色を確認</h3><p>ロゴデータ、ブランドカラー、パッケージの雰囲気を共有します。</p></div></article>
-          <article class="step"><div><div class="step-num">03</div><h3>概算見積もり</h3><p>ロット・仕様・納期に合わせて現実的な条件を出します。</p></div></article>
-          <article class="step"><div><div class="step-num">04</div><h3>制作・納品</h3><p>確定仕様に沿って制作し、配布予定日に合わせて納品します。</p></div></article>
+        <div class="flow-grid">
+          <article class="step"><div class="step-num">01</div><div><h3>用途を確認</h3><p>誰に、どの場面で、何粒配るかを整理します。</p></div></article>
+          <article class="step"><div class="step-num">02</div><div><h3>ロゴ・色を確認</h3><p>ロゴデータ、ブランドカラー、包装の雰囲気を共有します。</p></div></article>
+          <article class="step"><div class="step-num">03</div><div><h3>概算見積もり</h3><p>ロット・仕様・納期に合わせて条件を出します。</p></div></article>
+          <article class="step"><div class="step-num">04</div><div><h3>制作・納品</h3><p>確定仕様に沿って制作し、配布予定日に合わせて納品します。</p></div></article>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="light" style="padding-top:0;">
+    <section id="contact" class="section contact">
       <div class="container contact-shell">
-        <aside class="contact-panel dark">
-          <span class="eyebrow">QUICK ESTIMATE</span>
-          <h3>初回相談で確認すること</h3>
-          <p>ざっくりで大丈夫です。配布シーンと数量感が分かれば、最初の提案に進めます。</p>
+        <aside class="contact-side">
+          <span class="eyebrow">Quick estimate</span>
+          <h2 style="font-size:clamp(31px,4vw,48px);">相談前に、<br>決めなくていい。</h2>
+          <p>ざっくりの配布シーンと数量感だけで、初回提案に進めます。</p>
           <div class="quote">
-            <div class="quote-line"><span>基本ロット</span><strong>2,500粒</strong></div>
-            <div class="quote-line"><span>参考単価</span><strong>30円/粒</strong></div>
-            <div class="quote-line"><span>参考価格</span><strong>75,000円</strong></div>
+            <div class="quote-row"><span>基本ロット</span><strong>2,500粒</strong></div>
+            <div class="quote-row"><span>参考単価</span><strong>30円/粒</strong></div>
+            <div class="quote-row"><span>参考価格</span><strong>75,000円</strong></div>
           </div>
-          <div class="quote-total"><small>STANDARD TOTAL</small><strong>¥75,000〜</strong></div>
         </aside>
-        <section class="contact-panel">
-          <span class="eyebrow">CONTACT</span>
-          <h3>ロゴ入り飴の相談をする</h3>
-          <p>フォーム入力後、メールソフトが開きます。内容は送信前に編集できます。</p>
-          <form id="inquiryForm">
+        <section class="contact-form">
+          <span class="eyebrow">Contact</span>
+          <h2 style="font-size:clamp(31px,4vw,48px);">ロゴ入り飴の相談をする</h2>
+          <form id="inquiryForm" style="margin-top:24px;">
             <div class="field"><label for="company">会社名・店舗名</label><input id="company" name="company" placeholder="例：〇〇株式会社 / 〇〇店"></div>
             <div class="field"><label for="name">ご担当者名</label><input id="name" name="name" placeholder="例：山田 太郎"></div>
             <div class="field"><label for="sceneSelect">利用シーン</label><select id="sceneSelect" name="scene"><option>飲食店・バー</option><option>式場・ホテル</option><option>イベント・展示会</option><option>企業ノベルティ</option><option>その他</option></select></div>
             <div class="field"><label for="quantity">想定数量</label><select id="quantity" name="quantity"><option>2,500粒</option><option>5,000粒</option><option>10,000粒以上</option><option>未定・相談したい</option></select></div>
             <div class="field full"><label for="message">相談内容</label><textarea id="message" name="message" placeholder="配布予定日、ロゴデータの有無、希望の雰囲気など"></textarea></div>
-            <p class="form-note">※ 正式な価格・納期は仕様確認後に確定します。無差別な大量営業ではなく、用途に合う先へ丁寧に提案します。</p>
+            <p class="form-note">※ 正式な価格・納期は仕様確認後に確定します。送信前にメール文面を編集できます。</p>
             <div class="field full"><button class="btn btn-primary" type="submit">メール文面を作成する</button></div>
           </form>
         </section>
       </div>
     </section>
 
-    <section class="light" style="padding-top:0;">
+    <section class="section" style="padding-top:0;">
       <div class="container">
         <span class="eyebrow">FAQ</span>
         <h2>よくある確認事項</h2>
@@ -467,10 +429,10 @@
 
     <section class="final-cta">
       <div class="container">
-        <span class="eyebrow">MUSASHI AME</span>
-        <h2>販促物ではなく、<br>「また思い出す理由」を作る。</h2>
-        <p>名刺、チラシ、ショップカードの次に渡す、小さなブランド体験。まずは2,500粒から、用途に合う形で相談できます。</p>
-        <a class="btn btn-primary" href="#contact">無料で相談する</a>
+        <span class="eyebrow">Musashi Ame</span>
+        <h2>名刺でも、チラシでもない。<br>持ち帰られるブランド体験を。</h2>
+        <p>まずは2,500粒から。渡す場面に合わせて、ロゴ入り飴の見せ方を一緒に整理します。</p>
+        <a class="btn btn-light" href="#contact">配布シーンを相談する</a>
       </div>
     </section>
   </main>
@@ -484,9 +446,7 @@
   <div id="toast" class="toast" role="status" aria-live="polite">メール文面を作成しました</div>
 
   <script>
-    const year = document.getElementById('year');
-    year.textContent = new Date().getFullYear();
-
+    document.getElementById('year').textContent = new Date().getFullYear();
     const form = document.getElementById('inquiryForm');
     const toast = document.getElementById('toast');
     form.addEventListener('submit', (event) => {
@@ -498,10 +458,10 @@
       const quantity = data.get('quantity') || '未定';
       const message = data.get('message') || '未入力';
       const subject = encodeURIComponent('武蔵飴 オーダーメイド飴の相談');
-      const body = encodeURIComponent(`武蔵飴 ご担当者様\n\nオーダーメイド飴について相談したいです。\n\n会社名・店舗名：${company}\nご担当者名：${name}\n利用シーン：${scene}\n想定数量：${quantity}\n相談内容：${message}\n\nよろしくお願いいたします。`);
+      const body = encodeURIComponent(`武蔵飴の相談をお願いします。\n\n会社名・店舗名：${company}\nご担当者名：${name}\n利用シーン：${scene}\n想定数量：${quantity}\n\n相談内容：\n${message}\n`);
       window.location.href = `mailto:?subject=${subject}&body=${body}`;
       toast.classList.add('show');
-      setTimeout(() => toast.classList.remove('show'), 2400);
+      setTimeout(() => toast.classList.remove('show'), 2600);
     });
   </script>
 </body>
