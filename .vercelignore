@@ -1,0 +1,9 @@
+# Do not upload local verification outputs or sales-list work files to Vercel.
+.git
+.vercel
+*.csv
+*.json
+*.py
+screenshot*.png
+mockups
+assets/musashi-logo-variants

@@ -1,0 +1,7 @@
+.vercel
+*.csv
+*.json
+*.py
+screenshot*.png
+mockups/
+assets/musashi-logo-variants/
